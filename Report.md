@@ -9,6 +9,4 @@
 - **User mode execution**: A legitimate *svchost.exe* runs in Session 0, but *scvhost.exe* is running in Session 1, indicating user-space execution
 
 ## 3. Analyzing Memory dump (PID: 9160)
-Algorithm       Hash                                                                   Path
----------       ----                                                                   ----
-SHA256          43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B98A0EDB97       C:\Windows\System32\volatilit...
+Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B98A0EDB97`
