@@ -4,8 +4,9 @@
 **scvhost.exe** (PID: 9160)
 
 ## 2. Why it is Suspicious:
-- **Mispelled name**: The correct system process is **svchost.exe**
-- **Parent Process (PPID: 4384)**: **explorer.exe** is launching **scvhost.exe**. Normally **scvhost.exe** is spawned by **services.exe (PID: 828)**
-- **User mode execution**: A legitimate **svchost.exe** runs in Session 0, but **scvhost.exe** is running in Session 1, indicating user-space execution
+- **Mispelled name**: The correct system process is *svchost.exe*
+- **Parent Process (PPID: 4384)**: *explorer.exe* is launching *scvhost.exe*. Normally *scvhost.exe* is spawned by **services.exe (PID: 828)**
+- **User mode execution**: A legitimate *svchost.exe* runs in Session 0, but *scvhost.exe* is running in Session 1, indicating user-space execution
 
+## 3. Analyzing Memory dump (PID: 9160)
 
