@@ -1,0 +1,28 @@
+Volatility 3 Framework 2.21.0
+
+Variable	Value
+
+Kernel Base	0xf80651600000
+DTB	0x1ad000
+Symbols	file:///C:/Windows/System32/volatility3/volatility3/symbols/windows/ntkrnlmp.pdb/D9424FC4861E47C10FAD1B35DEC6DCC8-1.json.xz
+Is64Bit	True
+IsPAE	False
+layer_name	0 WindowsIntel32e
+memory_layer	1 WindowsCrashDump64Layer
+base_layer	2 FileLayer
+KdDebuggerDataBlock	0xf80652200b20
+NTBuildLab	19041.1.amd64fre.vb_release.1912
+CSDVersion	0
+KdVersionBlock	0xf8065220f400
+Major/Minor	15.19041
+MachineType	34404
+KeNumberProcessors	1
+SystemTime	2025-01-27 09:08:52+00:00
+NtSystemRoot	C:\Windows
+NtProductType	NtProductWinNt
+NtMajorVersion	10
+NtMinorVersion	0
+PE MajorOperatingSystemVersion	10
+PE MinorOperatingSystemVersion	0
+PE Machine	34404
+PE TimeDateStamp	Mon Dec  9 11:07:51 2019
