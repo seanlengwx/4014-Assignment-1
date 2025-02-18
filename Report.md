@@ -12,6 +12,52 @@
 - **Parent Process (PPID: 4384)**: `explorer.exe` is launching `scvhost.exe`. Normally `scvhost.exe` is spawned by `services.exe (PID: 828)`
 - **User mode execution**: A legitimate `svchost.exe` runs in Session 0, but `scvhost.exe` is running in Session 1, indicating user-space execution
 
+## Parent and Child Processes
+- Looking at the [pstree](/Output Files/pstree_output.txt) we see that the suspicious sample is spawned by a few processes:
+```
+764	700	winlogon.exe	0x850bb1bf0180
+* 4344	764	userinit.exe	0x850bb31f0340
+** 4384	4344	explorer.exe	0x850bb320c300
+*** 7812	4384	OneDrive.exe	0x850bb3fed080
+**** 9208	7812	Microsoft.Shar	0x850bb47db080
+*** 8040	4384	EXCEL.EXE	0x850bb3fec080
+*** 9160	4384	scvhost.exe	0x850bb65de080
+**** 6568	9160	conhost.exe	0x850bb656f080
+*** 3276	4384	calc.exe	0x850bb4450300
+**** 7656	3276	conhost.exe	0x850bb3e612c0
+**** 1132	3276	calc.exe	0x850bb49240c0
+*** 7668	4384	SecurityHealth	0x850bb460f080
+*** 7732	4384	vmtoolsd.exe	0x850bb4125240
+*** 10200	4384	notepad.exe	0x850bb656c080
+*** 6524	4384	msedge.exe	0x850bb36e7280
+**** 5056	6524	msedge.exe	0x850bb4257080
+**** 7204	6524	msedge.exe	0x850bb3d650c0
+**** 8	6524	msedge.exe	0x850bb3384080
+**** 6864	6524	msedge.exe	0x850bb3aa60c0
+**** 6672	6524	msedge.exe	0x850bb3382080
+**** 6704	6524	msedge.exe	0x850bb4141080
+**** 8632	6524	msedge.exe	0x850bb4136080
+* 940	764	fontdrvhost.ex	0x850bb1d11080
+* 1044	764	dwm.exe	0x850bb2453080
+```
+### Suspicious indicators
+- Mispelled Process Name
+  1. The correct Windows system process is `svchost.exe` but here it is `scvhost.exe`
+  2. Probably an attempt to avoid detection
+- Parent Process: `explorer.exe` (PID 4384)
+  1. Legitimate `svchost.exe` should be launched by `services.exe` (PID 828)
+  2. `scvhost.exe` was started by `explorer.exe`, which is NOT normal
+  3. This suggests that it was executed manually either by a maliucious script or user action
+- `scvhost.exe` has a `conhost.exe` child process (PID 6568)
+  1. `conhost.exe` is often used to execute command-line instructions
+  2. Malware often use this to execute PowerShell, batch scripts, or reverse shells
+- Execution timestamp
+  1. Started at `09:08:01 UTC` later than system processes (e.g., `winlogon.exe` at `09:06:35 UTC`)
+  2. Indicates it was executed after login, potentially as a user-space malware
+- Other suspicious child processes
+  1. `calc.exe` (PID 3276, 1132) -> Sometimes used for LOLBin
+  2. `notepad.exe` (PID 10200) -> opened `flag.txt`
+
 ## Analyzing Memory dump (PID: 9160)
 Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B98A0EDB97`
 
