@@ -74,4 +74,5 @@ Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B9
 - Using the virtual address, we dump the files and obtain 2 files
   1. `file.0x850bb4652940.0x850bb3c0b010.SharedCacheMap.capbudg.xlsm.vacb`
   2. `file.0x850bb4652940.0x850bb45c4370.DataSectionObject.capbudg.xlsm.dat`
-- Since it is a xlsm file, it could potentially have macros. Checking for that, 
+- Since it is a xlsm file, it could potentially have macros. Checking for that, we see VBA commands that utilize cells in the excel. Exploring the excel workbook, we navigate to the cells mentioned in the VBA command: `E14`, `F14`, `G14`, `H14`
+- Here we find: `flag(memory_corruption_is_bad)`
