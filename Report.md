@@ -2,7 +2,7 @@
 ## OS Profile and Kernel Version:
 - Kernel Base: 0xf80651600000
 - OS: WindowsIntel32
-- more details in: [info output](../Output_Files/info_output.txt)
+- more details in: [info output](Output_Files/info_output.txt)
 
 ## Name of Suspicious Sample:
 **scvhost.exe** (PID: 9160)
