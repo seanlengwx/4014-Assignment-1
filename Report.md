@@ -202,7 +202,7 @@ ImageSectionObject      0x850baecf0070  ntdll.dll       file.0x850baecf0070.0x85
 
 - Knowing that `calc.exe` is connecting to an external IP address, and using python libraries to execute some malicious code, we get a `.dmp` of it.
 - Since we see that the child processes of the malicious sample `scvhost.exe` spawns multiple `msedge.exe`, we search for any suspicious looking URLs.
-- From the [output](<./Output Files/calc_exe_mem_findings.txt>) we find the flag: `faken3t_t1ll_u_mak3_1t.com`
+- From the [output](<./Output Files/calc_exe_mem_output.txt>) we find the flag: `faken3t_t1ll_u_mak3_1t.com`
 ## Exploring `notepad.exe` (PID 10200)
 - Looking at the [cmdline output](<./Output Files/cmdline_output.txt>) we see that the file `flag.txt` was created
 ```
