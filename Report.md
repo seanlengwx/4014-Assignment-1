@@ -97,5 +97,16 @@ Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B9
 DataSectionObject       0x850bb4aa4190  flag.txt.lnk    file.0x850bb4aa4190.0x850bb665e5d0.DataSectionObject.flag.txt.lnk.dat
 ```
 - However, renaming the extension reveals a bunch of scrambled unreadable text.
-- Taking another approach, we **memdump** the PID 10200
-- 
+- Taking another approach, we **memdump** the PID 10200 and get the following output when searching for any flags
+```
+flag{d0nt_foRg3t_uN1c0de_$tR1nGsxt
+flag{d0nt_foRg3t_uN1c0de_$tR1nGs}
+flag{d0nt_foRg3t_uN1c0de_$tR1n
+flag{d0nt_foRg3t_uN1c0de_$tR1nGs}
+flag{d0nt_foRg3t_uN1c0de_$tR
+flag{d0nt_foRg3t_uN1c
+flag{d0nt_foRg3t_uN1c0de_
+flag{d0nt_foRg3t_uN1c0de_$t
+flag{d0nt_foRg3t_uN1c0de
+```
+- so we see that the 2nd flag is: `flag{d0nt_foRg3t_uN1c0de_$tR1nGs}`
