@@ -13,7 +13,7 @@
 - **User mode execution**: A legitimate `svchost.exe` runs in Session 0, but `scvhost.exe` is running in Session 1, indicating user-space execution
 
 ## Parent and Child Processes
-- Looking at the [pstree](/Output Files/pstree_output.txt) we see that the suspicious sample is spawned by a few processes:
+- Looking at the [pstree](<./Output Files/pstree_output.txt>) we see that the suspicious sample is spawned by a few processes:
 ```
 764	700	winlogon.exe	0x850bb1bf0180
 * 4344	764	userinit.exe	0x850bb31f0340
@@ -63,9 +63,9 @@ Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B9
 
 - **VirusTotal**: 4/72 security vendors flagged as malicious.
 
-- Further analysis of [pslist output](./pslist_output.txt) shows that `scvhost.exe` also creates `conhost.exe (PID: 6568)` but **VirusTotal** doesn't show anything for `conhost.exe (PID: 6568)`
+- Further analysis of [pslist output](<./Output Files/pslist_output.txt>) shows that `scvhost.exe` also creates `conhost.exe (PID: 6568)` but **VirusTotal** doesn't show anything for `conhost.exe (PID: 6568)`
 
-## NetScan [(Full output)](./netscan_output.txt)
+## NetScan [output](<./Output Files/netscan_output.txt>)
 ### 1. `EXCEL.EXE` Making External Connections (PID 8040)
 ```
 0x850bb3566a20	TCPv4	192.168.221.131	49734	23.217.112.41	443	ESTABLISHED	8040	EXCEL.EXE	2025-01-27 09:08:18.000000 UTC
@@ -112,7 +112,7 @@ Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B9
 ```
 8040    EXCEL.EXE       "C:\Program Files (x86)\Microsoft Office\Root\Office16\EXCEL.EXE" "C:\Users\User\Downloads\capbudg.xlsm"
 ```
-- Looking at the [filescan](Output Files/filescan_output.txt) we see that `capbudg.xlsm` has a virtual address of `0x850bb4652940`.
+- Looking at the [filescan](<./Output Files/filescan_output.txt>) we see that `capbudg.xlsm` has a virtual address of `0x850bb4652940`.
 ```
 0x850bb4652940	\Users\User\Downloads\capbudg.xlsm
 ```
@@ -123,7 +123,7 @@ Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B9
 - Here we find: `flag(memory_corruption_is_bad)`
 
 ## Exploring `calc.exe` (PID 1132)
-- Looking at the [cmdline output](/Output Files/cmdline_output.txt) we see nothing suspicious
+- Looking at the [cmdline output](<./Output Files/cmdline_output.txt>) we see nothing suspicious
 ```
 1132	calc.exe	"C:\Windows\calc.exe" 
 3276	calc.exe	"C:\Windows\calc.exe" 
@@ -182,12 +182,12 @@ ImageSectionObject      0x850baecf0070  ntdll.dll       file.0x850baecf0070.0x85
 ```
 
 - However, searching the SHA256 hash of `calc.exe image` does not return any result on **VirusTotal**.
-- Looking at the [NetScan](/Output Files/netscan_output.txt) we see that `calc.exe` (PID 3276) actually connects to an external IP address `192.168.170.132	65432`. This could mean that `calc.exe (PID 1132)` is used to execute the malicious code and establishes connection with a C2 server for data exfiltration or downloading of payloads.
+- Looking at the [NetScan](<./Output Files/netscan_output.txt>) we see that `calc.exe` (PID 3276) actually connects to an external IP address `192.168.170.132	65432`. This could mean that `calc.exe (PID 1132)` is used to execute the malicious code and establishes connection with a C2 server for data exfiltration or downloading of payloads.
 ```
 0x850bb3b32b50	TCPv4	192.168.221.131	49753	192.168.170.132	65432	ESTABLISHED	1132	calc.exe	2025-01-27 09:07:48.000000 UTC
 ```
 
-- Looking at the [filescan](/Output Files/filescan_output.txt) we find the following `.pyd` files in unusual locations, suggesting that the malware dropped these files to enable the execution of malicious Python code:
+- Looking at the [filescan](<./Output Files/filescan_output.txt>) we find the following `.pyd` files in unusual locations, suggesting that the malware dropped these files to enable the execution of malicious Python code:
   1. `0x850bb3a56b40	\Users\User\AppData\Local\Temp\_MEI32762\_queue.pyd`
   2. `0x850bb4a96220	\Users\User\AppData\Local\Temp\_MEI32762\_socket.pyd`
   3. `0x850bb4aa9460	\Users\User\AppData\Local\Temp\_MEI32762\_bz2.pyd`
@@ -201,11 +201,11 @@ ImageSectionObject      0x850baecf0070  ntdll.dll       file.0x850baecf0070.0x85
   11. `0x850bb4d26d60	\Users\User\AppData\Local\Temp\_MEI32762\unicodedata.pyd`
 
 ## Exploring `notepad.exe` (PID 10200)
-- Looking at the [cmdline output](/Output Files/cmdline_output.txt) we see that the file `flag.txt` was created
+- Looking at the [cmdline output](<./Output Files/cmdline_output.txt>) we see that the file `flag.txt` was created
 ```
 10200	notepad.exe	"C:\Windows\system32\NOTEPAD.EXE" C:\Users\User\Desktop\flag.txt
 ```
-- Exploring the [filescan](Output Files/filescan_output.txt) we see that the file `flag.txt.lnk` has the virtual address: `0x850bb4aa4190`
+- Exploring the [filescan](<./Output Files/filescan_output.txt>) we see that the file `flag.txt.lnk` has the virtual address: `0x850bb4aa4190`
 ```
 0x850bb4aa4190	\Users\User\AppData\Roaming\Microsoft\Windows\Recent\flag.txt.lnk
 ```
