@@ -128,6 +128,77 @@ Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B9
 1132	calc.exe	"C:\Windows\calc.exe" 
 3276	calc.exe	"C:\Windows\calc.exe" 
 ```
+- Looking at the memory dump of (PID 1132), we see that it contains Python-related files (`python39.dll`, `_hashlib.pyd`, `_socket.pyd`,etc.).
+- This suggests the execution of Python scripts within `calc.exe`
+- This is a known persistence technique where malware uses `calc.exe` to execute hidden payloads.
+```
+ImageSectionObject      0x850baef94ed0  KernelBase.dll  file.0x850baef94ed0.0x850baef9cc00.ImageSectionObject.KernelBase.dll.img
+ImageSectionObject      0x850bb3a50420  python39.dll    file.0x850bb3a50420.0x850bb48b9d60.ImageSectionObject.python39.dll.img
+ImageSectionObject      0x850bb4d260e0  md__mypyc.cp39-win_amd64.pyd    file.0x850bb4d260e0.0x850bb4905b00.ImageSectionObject.md__mypyc.cp39-win_amd64.pyd.img
+DataSectionObject       0x850bb3334560  calc.exe        Error dumping file
+ImageSectionObject      0x850bb3334560  calc.exe        file.0x850bb3334560.0x850bb3768a20.ImageSectionObject.calc.exe.img
+ImageSectionObject      0x850bb4aa9460  _bz2.pyd        file.0x850bb4aa9460.0x850bb49058a0.ImageSectionObject._bz2.pyd.img
+ImageSectionObject      0x850bb4d247e0  _lzma.pyd       file.0x850bb4d247e0.0x850bb1cf1730.ImageSectionObject._lzma.pyd.img
+ImageSectionObject      0x850bb4d26d60  unicodedata.pyd file.0x850bb4d26d60.0x850bb3f03a20.ImageSectionObject.unicodedata.pyd.img
+ImageSectionObject      0x850bb4d25dc0  backend_c.cp39-win_amd64.pyd    file.0x850bb4d25dc0.0x850bb3076270.ImageSectionObject.backend_c.cp39-win_amd64.pyd.img
+ImageSectionObject      0x850bb4d26a40  _hashlib.pyd    file.0x850bb4d26a40.0x850bb48f4b00.ImageSectionObject._hashlib.pyd.img
+ImageSectionObject      0x850bb4aa8970  libssl-1_1.dll  file.0x850bb4aa8970.0x850bb4a22d30.ImageSectionObject.libssl-1_1.dll.img
+ImageSectionObject      0x850bb4aa44b0  libcrypto-1_1.dll       file.0x850bb4aa44b0.0x850bb46ef4a0.ImageSectionObject.libcrypto-1_1.dll.img
+ImageSectionObject      0x850bb4d24970  _ssl.pyd        file.0x850bb4d24970.0x850bb30bf270.ImageSectionObject._ssl.pyd.img
+ImageSectionObject      0x850bb260b0c0  version.dll     file.0x850bb260b0c0.0x850bb2689c30.ImageSectionObject.version.dll.img
+ImageSectionObject      0x850bb4d25aa0  select.pyd      file.0x850bb4d25aa0.0x850bb49048a0.ImageSectionObject.select.pyd.img
+ImageSectionObject      0x850bb4a96220  _socket.pyd     file.0x850bb4a96220.0x850bb1d0f010.ImageSectionObject._socket.pyd.img
+ImageSectionObject      0x850bb4d3b0d0  ucrtbase.dll    file.0x850bb4d3b0d0.0x850bb4a1e8a0.ImageSectionObject.ucrtbase.dll.img
+ImageSectionObject      0x850bb4d26bd0  md.cp39-win_amd64.pyd   file.0x850bb4d26bd0.0x850bb4906d60.ImageSectionObject.md.cp39-win_amd64.pyd.img
+ImageSectionObject      0x850bb3a56b40  _queue.pyd      file.0x850bb3a56b40.0x850bb3c24cc0.ImageSectionObject._queue.pyd.img
+ImageSectionObject      0x850bb4d3a770  VCRUNTIME140.dll        file.0x850bb4d3a770.0x850bb48b5a20.ImageSectionObject.VCRUNTIME140.dll.img
+ImageSectionObject      0x850bb40255f0  python3.dll     file.0x850bb40255f0.0x850bb48acdf0.ImageSectionObject.python3.dll.img
+ImageSectionObject      0x850bb2a471d0  rasadhlp.dll    file.0x850bb2a471d0.0x850bb2923b40.ImageSectionObject.rasadhlp.dll.img
+ImageSectionObject      0x850bb27d79c0  FWPUCLNT.DLL    file.0x850bb27d79c0.0x850bb2898cc0.ImageSectionObject.FWPUCLNT.DLL.img
+ImageSectionObject      0x850bb1cc5390  cryptsp.dll     file.0x850bb1cc5390.0x850bb1cb2cc0.ImageSectionObject.cryptsp.dll.img
+ImageSectionObject      0x850bb1cc5e80  IPHLPAPI.DLL    file.0x850bb1cc5e80.0x850bb1cbaa20.ImageSectionObject.IPHLPAPI.DLL.img
+ImageSectionObject      0x850bb1ce4150  rsaenh.dll      file.0x850bb1ce4150.0x850bb1cecd00.ImageSectionObject.rsaenh.dll.img
+ImageSectionObject      0x850bb1cc6c90  mswsock.dll     file.0x850bb1cc6c90.0x850bb1cb4cc0.ImageSectionObject.mswsock.dll.img
+ImageSectionObject      0x850bb1cc5cf0  dnsapi.dll      file.0x850bb1cc5cf0.0x850bb1cb9cc0.ImageSectionObject.dnsapi.dll.img
+ImageSectionObject      0x850baef95830  win32u.dll      file.0x850baef95830.0x850baefc1920.ImageSectionObject.win32u.dll.img
+ImageSectionObject      0x850bb1cc6b00  cryptbase.dll   file.0x850bb1cc6b00.0x850bb1cb2a20.ImageSectionObject.cryptbase.dll.img
+ImageSectionObject      0x850baef94bb0  gdi32full.dll   file.0x850baef94bb0.0x850baefbfd00.ImageSectionObject.gdi32full.dll.img
+ImageSectionObject      0x850baef93ce0  user32.dll      file.0x850baef93ce0.0x850baef3e9e0.ImageSectionObject.user32.dll.img
+ImageSectionObject      0x850baef95510  gdi32.dll       file.0x850baef95510.0x850baeee7510.ImageSectionObject.gdi32.dll.img
+ImageSectionObject      0x850baef951f0  bcrypt.dll      file.0x850baef951f0.0x850baef47c90.ImageSectionObject.bcrypt.dll.img
+ImageSectionObject      0x850baef956a0  msvcp_win.dll   file.0x850baef956a0.0x850baef9c050.ImageSectionObject.msvcp_win.dll.img
+ImageSectionObject      0x850baef95e70  bcryptprimitives.dll    file.0x850baef95e70.0x850baeee7a50.ImageSectionObject.bcryptprimitives.dll.img
+ImageSectionObject      0x850baef94250  ucrtbase.dll    file.0x850baef94250.0x850baef47790.ImageSectionObject.ucrtbase.dll.img
+ImageSectionObject      0x850baef94700  crypt32.dll     file.0x850baef94700.0x850baeee77b0.ImageSectionObject.crypt32.dll.img
+ImageSectionObject      0x850baef920c0  advapi32.dll    file.0x850baef920c0.0x850baeee8010.ImageSectionObject.advapi32.dll.img
+ImageSectionObject      0x850baef931f0  ws2_32.dll      file.0x850baef931f0.0x850baeee8550.ImageSectionObject.ws2_32.dll.img
+ImageSectionObject      0x850baef92ed0  nsi.dll file.0x850baef92ed0.0x850baeee72b0.ImageSectionObject.nsi.dll.img
+ImageSectionObject      0x850baef93e70  msvcrt.dll      file.0x850baef93e70.0x850baef45d60.ImageSectionObject.msvcrt.dll.img
+ImageSectionObject      0x850baef93510  sechost.dll     file.0x850baef93510.0x850baeee6d50.ImageSectionObject.sechost.dll.img
+ImageSectionObject      0x850baef936a0  kernel32.dll    file.0x850baef936a0.0x850baeef5220.ImageSectionObject.kernel32.dll.img
+ImageSectionObject      0x850bae483e70  imm32.dll       file.0x850bae483e70.0x850baeeef6f0.ImageSectionObject.imm32.dll.img
+ImageSectionObject      0x850bae482250  rpcrt4.dll      file.0x850bae482250.0x850baef27a90.ImageSectionObject.rpcrt4.dll.img
+ImageSectionObject      0x850baecf0070  ntdll.dll       file.0x850baecf0070.0x850baed1b9a0.ImageSectionObject.ntdll.dll-2.img
+```
+
+- However, searching the SHA256 hash of `calc.exe image` does not return any result on **VirusTotal**.
+- Looking at the [NetScan](/Output Files/netscan_output.txt) we see that `calc.exe` (PID 3276) actually connects to an external IP address `192.168.170.132	65432`. This could mean that `calc.exe (PID 1132)` is used to execute the malicious code and establishes connection with a C2 server for data exfiltration or downloading of payloads.
+```
+0x850bb3b32b50	TCPv4	192.168.221.131	49753	192.168.170.132	65432	ESTABLISHED	1132	calc.exe	2025-01-27 09:07:48.000000 UTC
+```
+
+- Looking at the [filescan](/Output Files/filescan_output.txt) we find the following `.pyd` files in unusual locations, suggesting that the malware dropped these files to enable the execution of malicious Python code:
+  1. `0x850bb3a56b40	\Users\User\AppData\Local\Temp\_MEI32762\_queue.pyd`
+  2. `0x850bb4a96220	\Users\User\AppData\Local\Temp\_MEI32762\_socket.pyd`
+  3. `0x850bb4aa9460	\Users\User\AppData\Local\Temp\_MEI32762\_bz2.pyd`
+  4. `0x850bb4d247e0	\Users\User\AppData\Local\Temp\_MEI32762\_lzma.pyd`
+  5. `0x850bb4d24970	\Users\User\AppData\Local\Temp\_MEI32762\_ssl.pyd`
+  6. `0x850bb4d25aa0	\Users\User\AppData\Local\Temp\_MEI32762\select.pyd`
+  7. `0x850bb4d25dc0	\Users\User\AppData\Local\Temp\_MEI32762\zstandard\backend_c.cp39-win_amd64.pyd`
+  8. `0x850bb4d260e0	\Users\User\AppData\Local\Temp\_MEI32762\charset_normalizer\md__mypyc.cp39-win_amd64.pyd`
+  9. `0x850bb4d26a40	\Users\User\AppData\Local\Temp\_MEI32762\_hashlib.pyd`
+  10. `0x850bb4d26bd0	\Users\User\AppData\Local\Temp\_MEI32762\charset_normalizer\md.cp39-win_amd64.pyd`
+  11. `0x850bb4d26d60	\Users\User\AppData\Local\Temp\_MEI32762\unicodedata.pyd`
 
 ## Exploring `notepad.exe` (PID 10200)
 - Looking at the [cmdline output](/Output Files/cmdline_output.txt) we see that the file `flag.txt` was created
