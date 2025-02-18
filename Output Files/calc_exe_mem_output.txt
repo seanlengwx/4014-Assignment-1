@@ -1,0 +1,209 @@
+                                    "host.com", 80, "/path", "query", "fragment"
+    >>> reach("www.acme.com")
+    '.acme.com'
+    >>> reach("acme.com")
+    'acme.com'
+        # Url(scheme='http', host='google.com', port=None, path='/mail/', ...)
+        # Url(scheme=None, host='google.com', port=80, path=None, ...)
+      'exceptions': ['foo.bar', '*.bar.com', '127.0.0.1', '10.1', '1
+      'exceptions': ['foo.bar', '*.bar.com', '127.0.0.1', '10.1', '10.0/16']
+Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B3BA993B80>: Failed to resolve 'faken3t_t1ll_u_mak3_1t.com' ([Errno 11001] getaddrinfo failed)"))
+HTTPConnectionPool(host='faken3t_t1ll_u_mak3_1t.com', port=80): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B3BA993B80>: Failed to resolve 'faken3t_t1ll_u_mak3_1t.com' ([Errno 11001] getaddrinfo failed)"))
+<urllib3.connection.HTTPConnection object at 0x000001B3BA993B80>: Failed to resolve 'faken3t_t1ll_u_mak3_1t.com' ([Errno 11001] getaddrinfo failed)
+"<urllib3.connection.HTTPConnection object at 0x000001B3BA993B80>: Failed to resolve 'faken3t_t1ll_u_mak3_1t.com' ([Errno 11001] getaddrinfo failed)"
+HTTPConnectionPool(host='faken3t_t1ll_u_mak3_1t.com', port=80)
+NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B3BA993B80>: Failed to resolve 'faken3t_t1ll_u_mak3_1t.com' ([Errno 11001] getaddrinfo failed)")
+NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001B3BA993B80>: Failed to resolve 'faken3t_t1ll_u_mak3_1t.com' ([Errno 11001] getaddrinfo failed)")
+eek.3721.comsOX
+afe.comsrorre;\
+2Z","ver":"4.0","iKey":"o:0ded60c75e44443aa3484c42c1c43fe8","ext":{"sdk":{"ver":"1DS-Web-JS-3.2.8","seq":12,"installId":"75f3af12-2575-41b0-b620-a4691e2eec19","epoch":"3583228017"},"app":{"locale":"en-sg","sesId":"PaGH9iphRoT/URAjL2Jqhz"},"user":{"locale":"en-US","localId":"t:0CF59241A47A6469150587C0A53F65CC"},"web":{"domain":"ntp.msn.com","userConsent":false},"intweb":{},"utc":{"popSample":100},"loc":{"tz":"-08:00"},"dt":{"traceId":"670c07fb927d4ce281eafb0c31acc0ce","spanId":"05f37bd53f5c44c3"},"metadata":{"f":{"page":{"f":{"config":{"t":6},"dwellTime":{"t":6}}},"browser":{"f":{"width":{"t":6},"height":{"t":6},"scrollOffset":{"t":6}}},"timestamp":{"t":6},"eventIndex":{"t":6},"user":{"f":{"aadState":{"t":6}}},"content":{"f":{"docHeight":{"t":6}}}}}},"data":{"baseType":"MS.News.Web.Base","baseData":{},"page":{"appType":"edgeChromium","canvas":"Browser","config":2083,"content":{"title":"New tab","subcategory":"antp","domainId":"340","vertical":"homepage","topic":"Discover"},"isAdEnabled":false,"isAutoRefresh":false,"isJSEnabled":true,"isStatic":false,"name":"default","ocid":"msedgdhp","product":"anaheim","type":"dhp","url":"https://ntp.msn.com/edge/ntp?locale=en-US&title=New%20tab&dsp=1&sp=Bing&startpage=1&PC=U531&ocid=msedgdhp","viewType":"size5column","theme":"light","has3PSearch":false,"isSearchAB":false,"pivot":"","referral":"","dwellTime":0},"browser":{"isMobile":false,"width":1714,"height":894,"screenSize":"1714x934","clientId":"0CF59241A47A646
+tal.com",
+ni","Rating":"0","ReviewCount":"0","Calories":"549","Domain":"www.jamieoliver.com","ClickThroughUrl":"https://www.bing.com/search?q=Popular Recipes&filters=sid:%224e425609c043ea522fbaa3d26d9fddc4%22%20supwlcar:%221%22%20tsource:%22EntitySegments%22%20catesegtype:%22recipe%22%20segtype:%22UmVjaXBl%22%20ctype:%220%22%20mltype:%225%22%20eltypedim1:%22Recipe%22%20userscenario:%22dsb%22%20ForceHighConfRecipe:%22true%22&idpbck=1&form=SHTRRC","Thumbnail":{"ThumbnailUrl":"/th?id=OSK.4c44689e1151c802c5955998fef49e55","ThumbnailId":"OSK.4c44689e1151c802c5955998fef49e55","ThumbnailHeight":96,"ThumbnailHeightV2":96,"ThumbnailWidth":140,"ThumbnailWidthV2":140,"ThumbnailType":0},"HandOffType":"19","QSCode":"SHTRRC","RecipeUrl":"https://www.jamieoliver.com/recipes/rice/arancini/","DisplayName":"Jamie Oliver","instrumentedItem":{"_kValue":90057,"_qsCode":"TrendingRecipes","_handOffType":"19","_workflow":5,"_properties":{"form":"SHTRRC","cardType":"Mega"}}},{"Title":"The Ultimate Potato Soup Recipe","PreperationTime":"30 min","ServingPerRecipe":"8","Rating":"4.98","RatingScale":"5","ReviewCount":"11","Calories":"521","Domain":"sugarspunrun.com","ClickThroughUrl":"https://www.bing.com/search?q=Popular Recipes&filters=sid:%229030ec38b5ae70711df71d680465269c%22%20supwlcar:%221%22%20tsource:%22EntitySegments%22%20catesegtype:%22recipe%22%20segtype:%22UmVjaXBl%22%20ctype:%220%22%20mltype:%225%22%20eltypedim1:%22Recipe%22%20userscenario:%22dsb%22%20ForceHighConfRecipe:%22true%22&idpbck=1&form=SHTRRC","Thumbnail":{"ThumbnailUrl":"/th?id=OSK.ff26052e61fc8a72024fd4b53d29c47d","ThumbnailId":"OSK.ff26052e61fc8a72024fd4b53d29c47d","ThumbnailHeight":96,"ThumbnailHeightV2":96,"ThumbnailWidth":140,"ThumbnailWidthV2":140,"ThumbnailType":0},"HandOffType":"19","QSCode":"SHTRRC","RecipeUrl":"https://sugarspunrun.com/creamy-potato-soup-recipe/","DisplayName":"Sugar Spun Run","instrumentedItem":{"_kValue":90058,"_qsCode":"TrendingRecipes","_handOffType":"19","_workflow":5,"_properties":{"form":"SHTRRC","cardType":"Mega"}}},{"Title":"Candied Yams ReciviewCount":"6","Calories":"360","Domain":"www.daringgourmet.com","ClickThroughUrl":"https://www.bing.com/search?q=Popular Recipes&filters=sid:%22644dc0f93ab206b3e98cd3dc637fe29c%22%20supwlcar:%221%22%20tsource:%22EntitySegments%22%20catesegtype:%22recipe%22%20segtype:%22UmVjaXBl%22%20ctype:%220%22%20mltype:%225%22%20eltypedim1:%22Recipe%22%20userscenario:%22dsb%22%20ForceHighConfRecipe:%22true%22&idpbck=1&form=SHTRRC","Thumbnail":{"ThumbnailUrl":"/th?id=OSK.f18f75d027afa0a8daea76b01c3314f3","ThumbnailId":"OSK.f18f75d027afa0a8daea76b01c3314f3","ThumbnailHeight":96,"ThumbnailHeightV2":96,"ThumbnailWidth":140,"ThumbnailWidthV2":140,"ThumbnailType":0},"HandOffType":"19","QSCode":"SHTRRC","RecipeUrl":"https://www.daringgourmet.com/classic-chicken-salad/","DisplayName":"Daring Gourmet","instrumentedItem":{"_kValue":90055,"_qsCode":"TrendingRecipes","_handOffType":"19","_workflow":5,"_properties":{"form":"SHTRRC","cardType":"Mega"}}},{"Title":"Ultimate Slow Cooker Pot Roast","PreperationTime":"8 hr 15 min","ServingPerRecipe":"8","Rating":"4.86","RatingScale":"5","ReviewCount":"344","Calories":"498","Domain":"dinnerthendessert.com","ClickThroughUrl":"https://www.bing.com/search?q=Popular Recipes&filters=sid:%2258a799e3cf5f1360978f4a2ecca44567%22%20supwlcar:%221%22%20tsource:%22EntitySegments%22%20catesegtype:%22recipe%22%20segtype:%22UmVjaXBl%22%20ctype:%220%22%20mltype:%225%22%20eltypedim1:%22Recipe%22%20userscenario:%22dsb%22%20ForceHighConfRecipe:%22true%22&idpbck=1&form=SHTRRC","Thumbnail":{"ThumbnailUrl":"/th?id=OSK.2917be41dc5158b3dfd9de70a68a29ea","ThumbnailId":"OSK.2917be41dc5158b3dfd9de70a68a29ea","ThumbnailHeight":96,"ThumbnailHeightV2":96,"ThumbnailWidth":140,"ThumbnailWidthV2":140,"ThumbnailType":0},"HandOffType":"19","QSCode":"SHTRRC","RecipeUrl":"https://dinnerthendessert.com/ultimate-slow-cooker-pot-roast/","DisplayName":"Dinner Then Dessert","instrumentedItem":{"_kValue":90056,"_qsCode":"TrendingRecipes","_handOffType":"19","_workflow":5,"_properties":{"form":"SHTRRC","cardType":"Mega"}}},{"Title":"Arancia%225999068%22+Segment%3a%22popularnow.carousel%22+tnCol%3a%225%22+tnOrder%3a%226d4c24ea-a8a0-4337-b6c5-d933bae3434c%22&","Title":"Israel, Lebanon extend truce","HandOffType":0,"QSCode":"SHV2TN","instrumentedItem":{"_kValue":90051,"_qsCode":"NewsTrendingTopics","_handOffType":0,"_workflow":5,"_properties":{"form":"SHV2TN","cardType":"Mega"}}}],"IconId":"ODSWG.TrendingIcon"},"StartOrder":36,"ItemsCount":0,"QSCode":"SHV2TN","HandOffType":0}],"Placement":{"Position":"Left","Column":"Main","UXOrder":30,"ItemMaxCount":1000,"EstimatedHeight":[135],"UXTemplateList":["MegaExt"]}},{"Car
+{"net":{"http_se"alternative_sersed_alpns":["h3"1338252382154812rotocol_str":"qum.mgid.com"},{"a
+resource:"service::xboxlive.signin::DELEGATION",use_msa_v2_api:!0};window.chrome.authPrivate.acquireAccessTokenSilently(t,(t=>{t&&t.is_success&&t.is_token_valid?e(t.access_token):(m.M0.sendClientLogEvent({message:"Failed to fetch access_token from privateAuth API",type:"information",pb:{...(0,a.mnt)()}}),e(null))}))}))}().then((t=>{if(!t)return null;const n={method:"POST",body:JSON.stringify({RelyingParty:"http://auth.xboxlive.com",TokenType:"JWT",Properties:{AuthMethod:"RPS",SiteName:"user.auth.xboxlive.com",RpsTicket:`d=[${t}]`}}),headers:e};return G(l.Ge,n,"getXboxUserToken",a.bKC,!1,!0)})).then((t=>{if(!t||!t.Token)return null;const n={method:"POST",body:JSON.stringify({Properties:{SandboxId:"RETAIL",UserTokens:[`${t.Token}`]},RelyingParty:"http://xboxlive.com",TokenType:"JWT"}),headers:e};return G(l.KC,n,"getXboxXToken",a.bKC,!1,!0)}))}();if(r&&r.IssueInstant&&r.NotAfter&&r.Token&&r.DisplayClaims&&r.DisplayClaims.xui&&r.DisplayClaims.xui.length&&r.DisplayClaims.xui[0].xid&&r.DisplayClaims.xui[0].uhs)t={issueInstant:r.IssueInstant,notAfter:r.NotAfter,token:r.Token,xid:r.DisplayClaims.xui[0].xid,uhs:r.DisplayClaims.xui[0].uhs};else{m.M0.sendClientLogEvent({message:"Unable to get Xbox XToken",type:"information",pb:{...(0,a.mnt)()}});const e=new Date;e.setFullYear(n.getFullYear()+1),t={issueInstant:null,notAfter:e,token:"NoToken",xid:null,uhs:null}}(0,u.$o)().setObject(e,t)}}async function R(){await S();const e=(0,u.$o)().getObject(l.Tt);if(e&&e.timestamp){const t=((new Date).getTime()-new Date(e.timestamp).getTime())/1e3/60;if(Math.round(t)<30)return}await k().then((e=>{if(!e)return null;const t={timestamp:new Date,games:e};(0,u.$o)().setObject(l.Tt,t)}))}async function k(){const e=(0,u.$o)().getObject(l.uu);return e&&e.token&&e.xid&&e.uhs&&e.notAfter&&new Date(e.notAfter)>new Date?await L().then((async t=>{if(!t)return null;const n={};n.authorization=`XBL3.0 x=${e.uhs};${e.token}`,n["x-xbl-contract-version"]="2",n["x-xbl-client-name"]="Gaming",n["x-xbl-client-type"]="Service",n["xbl-scenario-type"]="EdgeGNTP",n["Accept-Language"]=(0,o.Yq)().CurrentMarket.substring(0,2),n["content-type"]="application/json";const r={method:"GET",headers:n},i=l.UD.replace("{xuidValue}",e.xid),u=await G(i,r,"fetchXboxTitleHubData",a.bKC,!1,!0);if(!u||!u.titles||!u.titles.length)return null;const s=u.titles.filter((e=>e.type&&"game"===e.type.toLowerCase()&&e.titleRecord&&e.titleRecord.lastTimePlayed)).sort((function(e,t){return new Date(t.titleRecord.lastTimePlayed).getTime()-new Date(e.titleRecord.lastTimePlayed).getTime()}));if(!s||!s.length)return null;const c=s[0];if(c&&c.images&&c.images.length){const e=c.images.find((e=>e.type&&"poster"===e.type.toLowerCase()));e&&e.url&&(c.displayImage=e.url)}const d=new Array;return d.push(s[0]),s.slice(1).filter((e=>e.isStreamable)).forEach((e=>{d.push(e)})),d.slice(0,6)})):null}async function L(){const e=await O({apiUrl:l.Hp,ocid:l.hR,addPageInfoToOcid:!1,appendCommonParams:!0,appendMarket:!1,method:"GET",body:null,additionalHeaders:null,withRetries:!1,logErrorAsWarning:!0});if(!(e&&e.value&&e.value.length&&e.value[0]&&e.value[0].userSettings&&e.value[0].userSettings.gamingCards))return!1;let t;try{t=JSON.parse(e.value[0].userSettings.gamingCards)}catch{m.M0.sendClientLogEvent({message:"Error in getXboxUserConsent(). Unable to parse user settings",type:"information",pb:{...(0,a.mnt)()}})}return t&&t.isConnectToXboxEnabled}},70346:function(e,t,n){n.d(t,{$p:function(){return K},Aj:function(){return N},Ak:function(){return Ie},BU:function(){return ce},Bl:function(){return w},C5:function(){return B},E6:function(){return m},E9:function(){return Z},EK:function(){return u},F7:function(){return ue},FY:function(){return ve},F_:function(){return ne},G3:function(){return ae},GZ:function(){return J},Ge:function(){return E},Hp:function(){return T},JD:function(){return O},KC:function(){return A},KX:function(){return V},Kq:function(){return pe},Kz:function(){return Y},Me:function(){return F},N6:function(){return l},OB:function(){return oe},OM:function(){return p},Oe:function(){return fe},PR:function(){return z}
+FINDSTR: Line 1249071 is too long.
+        "https://earth.google.com",
+        "https://www.figma.com"
+    "gocreativestudio.sawgrassink.com": "{\"Tier1\": [6129, 822], \"Tier2\": [8755]}",
+    "godatenow.com": "{\"Tier1\": [8223, 6061], \"Tier2\": [4973, 4853, 1970]}",
+    "gogglerespite.com": "{\"Tier1\": [6061, 1103], \"Tier2\": [7338, 8483]}",
+    "gokaans.com": "{\"Tier1\": [6061, 5938], \"Tier2\": [3006]}",
+    "goldenglimpse.com": "{\"Tier1\": [5388], \"Tier2\": [3290]}",
+    "goog.goodsearchez.com": "{\"Tier1\": [6061], \"Tier2\": [3215, 7338, 7838]}",
+    "google-drive-lti-iad-prod.instructure.com": "{\"Tier1\": [6061, 5938], \"Tier2\": [7338, 4365, 4543]}",
+    "google.com": "{\"Tier1\": [6061, 8405], \"Tier2\": [7338, 1092, 3215, 841]}",
+    "goosimes.com": "{\"Tier1\": [6061], \"Tier2\": []}",
+    "goquality.cat.com": "{\"Tier1\": [6061, 8405], \"Tier2\": [930, 9425]}",
+    "gos.x1.america.travian.com": "{\"Tier1\": [8741, 6061, 8629], \"Tier2\": [256, 6916, 459, 2941, 7055, 5515, 520]}",
+    "gossipcapital.com": "{\"Tier1\": [8845, 6129], \"Tier2\": []}",
+    "gotgravy.com": "{\"Tier1\": [8223], \"Tier2\": [8223]}",
+    "goto.searchpoweronline.com": "{\"Tier1\": [8629], \"Tier2\": [3215, 7838]}",
+    "gotporn.com": "{\"Tier1\": [8223], \"Tier2\": [8223]}",
+    "gov.sircon.com": "{\"Tier1\": [568], \"Tier2\": [568]}",
+    "govsalaries.com": "{\"Tier1\": [6061], \"Tier2\": [3573, 1609, 4056]}",
+    "govservices.dentaquest.com": "{\"Tier1\": [148], \"Tier2\": [6079, 9860, 2567]}",
+    "gowifinavy.wifi.viasat.com": "{\"Tier1\": [6061, 8405, 8845], \"Tier2\": [542, 2408, 79]}",
+    "gpcustomer.b2clogin.com": "{\"Tier1\": [6061], \"Tier2\": [503, 8133, 8469]}",
+    "gpsinsights.microsoft.com": "{\"Tier1\": [6061, 5938, 1103], \"Tier2\": [8133, 1370, 2223, 930]}",
+    "graduatewonderentreaty.com": "{\"Tier1\": [7670, 214, 6061], \"Tier2\": [5460]}",
+    "grandsupple.com": "{\"Tier1\": [7818, 8405], \"Tier2\": [9334]}",
+    "gravesonlineauctions.bidwrangler.com": "{\"Tier1\": [8405, 7818], \"Tier2\": [3690, 9358, 1538]}",
+    "graybar.okta.com": "{\"Tier1\": [6061, 8405, 214], \"Tier2\": [8469]}",
+    "greatergood.com": "{\"Tier1\": [9132], \"Tier2\": [1920, 9211]}",
+    "greedyfinance.com": "{\"Tier1\": [8405], \"Tier2\": [6219, 3073, 5375, 8943]}",
+    "green4762.com": "{\"Tier1\": [983, 6061, 8405], \"Tier2\": [166]}",
+    "one-nightstand.com": "{\"Tier1\": [1103], \"Tier2\": []}",
+    "one.google.com": "{\"Tier1\": [6061, 5938, 1103], \"Tier2\": [7338, 4365, 7989, 355]}",
+    "one.tis.toyota.com": "{\"Tier1\": [7234, 8405, 6061], \"Tier2\": [7050, 8183, 9665]}",
+    "one.walmart.com": "{\"Tier1\": [7818, 8405], \"Tier2\": [1455, 7430, 930, 5758]}",
+    "one.zoho.com": "{\"Tier1\": [8405, 6061, 5938], \"Tier2\": [5078, 4437, 3610]}",
+    "oneask.crm.dynamics.com": "{\"Tier1\": [5938, 6061, 8405], \"Tier2\": [4437, 8133, 228, 7746]}",
+    "oneclickfeed.com": "{\"Tier1\": [6061, 1103], \"Tier2\": [9598, 629]}",
+    "oneclickstar.com": "{\"Tier1\": [6061], \"Tier2\": []}",
+    "onedrive.live.com": "{\"Tier1\": [5938, 6061, 2154], \"Tier2\": [7989, 2281, 5277, 236, 7252]}",
+    "onedrive.visualstudio.com": "{\"Tier1\": [6061, 5938], \"Tier2\": [35, 8133, 8990, 236, 2874]}",
+    "onefinance.crm.dynamics.com": "{\"Tier1\": [6061, 5938, 8405], \"Tier2\": [4437, 9767, 8106, 8469]}",
+    "onepass.regions.com": "{\"Tier1\": [8405], \"Tier2\": [9121, 9388, 5443, 6219]}",
+    "oneplatform.portal.nttdataservices.com": "{\"Tier1\": [214, 6061, 8405], \"Tier2\": [8797]}",
+    "onesource.passporthealth.com": "{\"Tier1\": [6061, 8405, 148], \"Tier2\": [8469, 139, 9813, 7495]}",
+    "onesupport.crm.dynamics.com": "{\"Tier1\": [5938, 6061, 8405], \"Tier2\": [4437, 9767, 8106, 8469]}",
+    "onfirstup.com": "{\"Tier1\": [6061, 148, 8405, 214], \"Tier2\": [8129, 7928, 8439, 4947]}",
+    "onfleet.com": "{\"Tier1\": [6061, 214, 8405], \"Tier2\": [8725]}",
+    "online.adp.com": "{\"Tier1\": [6061, 8405, 214], \"Tier2\": [8439, 2176, 9527, 8469, 629, 5096]}",
+    "online.americanexpress.com": "{\"Tier1\": [8405, 8629], \"Tier2\": [5349, 3387, 7947]}",
+    "online.anb.com": "{\"Tier1\": [8405, 6409], \"Tier2\": [9270, 5443, 86]}",
+    "online.asbhawaii.com": "{\"Tier1\": [8405], \"Tier2\": [9270, 6219, 5443]}",
+    "online.autointegrate.com": "{\"Tier1\": [6061, 7234], \"Tier2\": [9598]}",
+    "online.bancorpsouth.com": "{\"Tier1\": [6061], \"Tier2\": []}",
+    "online.bankofthewest.com": "{\"Tier1\": [8405], \"Tier2\": [5443, 9270, 5040, 3319]}",
+    "online.cadencebank.com": "{\"Tier1\": [8405], \"Tier2\": [9270, 5443, 5040]}",
+    "online.campuscommerce.com": "{\"Tier1\": [7670, 6061], \"Tier2\": [3531, 1240, 9334, 3271]}",
+    "online.chartway.com": "{\"Tier1\": [8405], \"Tier2\": [4577, 5443, 9270]}",
+    "online.citadelbanking.com": "{\"Tier1\": [8405], \"Tier2\": [4577, 5443, 9270]}",
+    "online.citi.com": "{\"Tier1\": [8405, 3979], \"Tier2\": [9270, 5443, 6219, 5883, 2751]}",
+    "online.columbiabank.com": "{\"Tier1\": [8405, 6061], \"Tier2\": [5443, 9270, 9, 2251]}",
+    "online.communitychoicecu.com": "{\"Tier1\": [8405], \"Tier2\": [2751, 4577, 5443]}",
+    "online.daysmartpet.com": "{\"Tier1\": [8405, 6061, 214, 9132], \"Tier2\": [2686, 7661, 8405, 8410]}",
+    "online.daysmartsalon.com": "{\"Tier1\": [8405, 6061], \"Tier2\": [8405, 7661, 1908]}",
+    "online.dfcufinancial.com": "{\"Tier1\": [
+    "fortemaximo.mitie.com": "{\"Tier1\": [], \"Tier2\": [5311, 8797]}",
+    "forthrightsurveys.com": "{\"Tier1\": [8405, 6061], \"Tier2\": [379, 6547, 6101]}",
+    "fortis.instructure.com": "{\"Tier1\": [7670, 6061, 8405], \"Tier2\": [8877, 1240]}",
+    "fortnitetracker.com": "{\"Tier1\": [8741, 983, 6061], \"Tier2\": [3175, 256, 9706, 5663, 6509, 3449]}",
+    "fortunescrollstrap.com": "{\"Tier1\": [983], \"Tier2\": []}",
+    "forum.oneclickchicks.com": "{\"Tier1\": [8223], \"Tier2\": [3023, 7183, 2259, 934]}",
+    "forumofdesires.com": "{\"Tier1\": [1103, 8405], \"Tier2\": [3023, 3604, 166]}",
+    "forums.spacebattles.com": "{\"Tier1\": [983], \"Tier2\": [3023, 7284, 3561]}",
+    "founct.com": "{\"Tier1\": [], \"Tier2\": [4533]}",
+    "foundersonline.foundersfcu.com": "{\"Tier1\": [8405], \"Tier2\": [4577, 5443, 2751]}",
+    "fr.xhamster.com": "{\"Tier1\": [8223], \"Tier2\": [7183, 2259, 1179, 6259]}",
+    "fraudalertmgmt6.fnis.com": "{\"Tier1\": [3979, 8405], \"Tier2\": [1739, 5120]}",
+    "fredatmcd.read.inkling.com": "{\"Tier1\": [6061, 8405], \"Tier2\": [4426]}",
+    "free2dating.com": "{\"Tier1\": [], \"Tier2\": [4973, 1568, 1970]}",
+    "freerepublic.com": "{\"Tier1\": [5181, 3939, 1103], \"Tier2\": [4209, 4079]}",
+    "freescoreonline.com": "{\"Tier1\": [7670, 8405], \"Tier2\": [5760, 767, 7990]}",
+    "frenship.schoolobjects.com": "{\"Tier1\": [7670, 6061], \"Tier2\": []}",
+    "frenship.schoology.com": "{\"Tier1\": [7670, 6061], \"Tier2\": [1240, 7670, 4298]}",
+    "frequentsearches.com": "{\"Tier1\": [6061, 3939], \"Tier2\": []}",
+    "freseniusn.plateau.com": "{\"Tier1\": [6061, 8405], \"Tier2\": [6081]}",
+    "fresnostate.instructure.com": "{\"Tier1\": [7670], \"Tier2\": [8028, 8877]}",
+    "fridaynightfunking.fandom.com": "{\"Tier1\": [8741, 983], \"Tier2\": [6588, 9671, 3023]}",
+    "friendlyhome9815.matrixcare.com": "{\"Tier1\": [148, 6061], \"Tier2\": [9813, 6061, 2732]}",
+    "friends-with-benefits.com": "{\"Tier1\": [8405, 8223, 1103], \"Tier2\": [4000, 8536, 1970, 4973, 9466]}",
+    "frontend.gracehillvision.com": "{\"Tier1\": [6061, 1103], \"Tier2\": [1401]}",
+    "frontier.com": "{\"Tier1\": [6061, 983], \"Tier2\": [1611, 9126]}",
+    "frontier.yahoo.com": "{\"Tier1\": [6061, 3939], \"Tier2\": [1611, 8129]}",
+    "frontpage.pch.com": "{\"Tier1\": [8405], \"Tier2\": [1401, 1859, 2189]}",
+    "fs.browardschools.com": "{\"Tier1\": [7670, 6061], \"Tier2\": [4617, 6227]}",
+    "fs.charterschoolit.com": "{\"Tier1\": [7670, 6061], \"Tier2\": []}",
+    "fs.ultiproworkplace.com": "{\"Tier1\": [214, 6061], \"Tier2\": [8797, 1303, 2237]}",
+    "fs22.com": "{\"Tier1\": [8741, 6061], \"Tier2\": [256, 1241, 4119, 8453, 9442]}",
+    "fsastore.com": "{\"Tier1\": [148, 7818], \"Tier2\": [1617, 6462]}",
+    "fsdsapps.com": "{\"Tier1\": [], \"Tier2\": [2189]}",
+    "fss.servicepower.com": "{\"Tier1\": [6061, 8405], \"Tier2\": [7354, 8469]}",
+FINDSTR: Line 1311379 is too long.
+FINDSTR: Line 1311381 is too long.
+FINDSTR: Line 1311428 is too long.
+FINDSTR: Line 1311428 is too long.
+hr = 0, jobId = e2d9d0e0-28a0-48be-a47f-95d4028ab298, fileId = 3b43a5a496ef5fd77abe9193f2647d5626fea0ba, sessionId = d28c19c3-a5c2-49da-bc4e-04d6247f89c4, updateId = {492C3FB7-C5A8-45A4-BD14-DFA82D17BBF6}, caller = WU Client Download, cdnUrl = http://tlu.dl.delivery.mp.microsoft.com/filestreamingservice/files/65bea74f-398a-461e-b6a6-c7aca08fa405?P1=1737966441&P2=404&P3=2&P4=Nu%2bzjcYq89SJFdtJLJaM%2bgK7GahQnPoInsoTM7dhXEIpVitWLMsX5N4a2YdGFtuRyoOxpW0jwKVIQfot%2fdQgZw%3d%3d, cacheHost = , localFile = , bytes: [File: 17024584, File_Caller: 17024584, req: 66560], groupId = , isBackground? 0, downloadMode = 0, downloadModeSrc = 3, reason = 80d03802, clientVersion = 10.0.19041.3693, deviceProfile = 0xff00, isVpn = 0, encrypted? 0, setConfigs: {"TraceLevel":{"v":"4","p":"99"},"CountryCode":{"v":"SG","p":"1"},"KeyValue_EndpointFullUri":{"v":"kv501.prod.do.dsp.mp.microsoft.com","p":"1"}}, isThrottled = 0
+FINDSTR: Line 2294600 is too long.
+FINDSTR: Line 2520953 is too long.
+Explorer\DOMStorage\www.bing.coms
+FINDSTR: Line 2574669 is too long.
+FINDSTR: Line 4266260 is too long.
+FINDSTR: Line 4274478 is too long.
+FINDSTR: Line 4274481 is too long.
+FINDSTR: Line 4364440 is too long.
+FINDSTR: Line 4364820 is too long.
+FINDSTR: Line 4364948 is too long.
+.ntp.msn.comsptmarket_restored/
+ntp.msn.comsptmarket/
+.ntp.msn.comsptmarket_restoredv20
+q,ntp.msn.comsptmarketv20
+FINDSTR: Line 4450235 is too long.
+FINDSTR: Line 4450235 is too long.
+FINDSTR: Line 4450235 is too long.
+FINDSTR: Line 4450235 is too long.
+FINDSTR: Line 4450235 is too long.
+FINDSTR: Line 4450235 is too long.
+FINDSTR: Line 4450236 is too long.
+FINDSTR: Line 4450236 is too long.
+FINDSTR: Line 4450236 is too long.
+FINDSTR: Line 4450236 is too long.
+FINDSTR: Line 4450236 is too long.
+FINDSTR: Line 4450236 is too long.
+FINDSTR: Line 4450236 is too long.
+[{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"windows_win32"},{"application":"excel.activity.windows.com","platform":"host"},{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"packageId"},{"application":"","platform":"alternateId"}]06wuk4HwX9PxBRPNsITJWeMTI7aImrc9e74/hnQuU48=ECB32AF3-1440-4086-94E3-5311F97F89C4
+[{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"windows_win32"},{"application":"excel.activity.windows.com","platform":"host"},{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"packageId"},{"application":"","platform":"alternateId"}]06wuk4HwX9PxBRPNsITJWeMTI7aImrc9e74/hnQuU48=ECB32AF3-1440-4086-94E3-5311F97F89C4
+t`C[{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"windows_win32"},{"application":"excel.activity.windows.com","platform":"host"},{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"packageId"},{"application":"","platform":"alternateId"}]06wuk4HwX9PxBRPNsITJWeMTI7aImrc9e74/hnQuU48=ECB32AF3-1440-4086-94E3-5311F97F89C4\{Local Downloads}\capbudg.xlsm
+[{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"windows_win32"},{"application":"excel.activity.windows.com","platform":"host"},{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"packageId"},{"application":"","platform":"alternateId"}]06wuk4HwX9PxBRPNsITJWeMTI7aImrc9e74/hnQuU48=ECB32AF3-1440-4086-94E3-5311F97F89C4\{Local Downloads}\capbudg.xlsm
+[{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"windows_win32"},{"application":"excel.activity.windows.com","platform":"host"},{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"packageId"},{"application":"","platform":"alternateId"}]06wuk4HwX9PxBRPNsITJWeMTI7aImrc9e74/hnQuU48=ECB32AF3-1440-4086-94E3-5311F97F89C4\{Local Downloads}\capbudg.xlsm
+[{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"windows_win32"},{"application":"excel.activity.windows.com","platform":"host"},{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"packageId"},{"application":"","platform":"alternateId"}]06wuk4HwX9PxBRPNsITJWeMTI7aImrc9e74/hnQuU48=ECB32AF3-1440-4086-94E3-5311F97F89C4\{Local Downloads}\capbudg.xlsm
+[{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"windows_win32"},{"application":"excel.activity.windows.com","platform":"host"},{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"packageId"},{"application":"","platform":"alternateId"}]06wuk4HwX9PxBRPNsITJWeMTI7aImrc9e74/hnQuU48=ECB32AF3-1440-4086-94E3-5311F97F89C4\{Local Downloads}\capbudg.xlsm
+[{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"windows_win32"},{"application":"excel.activity.windows.com","platform":"host"},{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"packageId"},{"application":"","platform":"alternateId"}]06wuk4HwX9PxBRPNsITJWeMTI7aImrc9e74/hnQuU48=ECB32AF3-1440-4086-94E3-5311F97F89C4\{Local Downloads}\capbudg.xlsm
+sync.inmobi.comsync.inmobi.com
+sb.scorecardresearch.comsb.scorecardresearch.com
+sync.inmobi.comsync.inmobi.com
+sb.scorecardresearch.comsb.scorecardresearch.com
+ntp.msn.comsync.inmobi.com
+ntp.msn.comsync.outbrain.com
+ntp.msn.comsb.scorecardresearch.com
+ntp.msn.comsb.scorecardresearch.com
+ntp.msn.comsync.inmobi.com
+ntp.msn.com"Yf
+ntp.msn.comth.bing.com"Yf
+ntp.msn.com"
+ntp.msn.coms
+ntp.msn.com'1
+[{"rid":1,"dataGenerationTime":null,"faviconUrl":"//img-s-msn-com.akamaized.net/tenant/amp/entityid/AA13Q6AL.img","domain":"www.office.com","title":"Microsoft 365","tileSource":0,"tileTitleSource":0,"url":"https://www.office.com/","direction":"ltr","contextMenuLabel":"More Options","contentViewTelemetryTag":"{\"n\":\"frequent_topsite_tile\",\"d\":\"tsu\",\"c.t\":31,\"ext\":{\"hl\":\"tsn\",\"row\":1,\"col\":1},\"c.hl\":\"tsn\"}","anchorTelemetryTag":"{\"n\":\"frequent_topsite_url\",\"b\":1,\"d\":\"tsu\",\"c.t\":31,\"c.hl\":\"tsn\"}","toggleActionMenuButtonTelemetryTag":"{\"n\":\"frequent_topsite_context_menu\",\"b\":12,\"d\":\"tsu\",\"c.t\":31,\"c.hl\":\"More Options_tsn\"}","promote":false,"pinLabel":"Pin to page","pinActionButtonTelemetryTag":false},{"rid":1001,"faviconUrl":"//img-s-msn-com.akamaized.net/tenant/amp/entityid/AA18wU7w.img","title":"Booking.com","tileSource":-8,"url":"https://www.booking.com/index.html?aid=1538006&label=en-sg-edge-ntp-topsites-curate-ana","isSponsored":true,"contextMenuLabel":"More Options","contentViewTelemetryTag":"{\"n\":\"curatedleadgen_topsite_tile\",\"d\":\"https://www.booking.com/index.html?aid=1538006&label=en-sg-edge-ntp-topsites-curate-ana\",\"c.t\":31,\"ext\":{\"hl\":\"Booking.com\",\"row\":1,\"col\":2},\"c.hl\":\"Booking.com\"}","anchorTelemetryTag":"{\"n\":\"curatedleadgen_topsite_url\",\"b\":1,\"d\":\"https://www.booking.com/index.html?aid=1538006&label=en-sg-edge-ntp-topsites-curate-ana\",\"c.t\":31,\"c.hl\":\"Booking.com\"}","toggleActionMenuButtonTelemetryTag":"{\"n\":\"curatedleadgen_topsite_context_menu\",\"b\":12,\"d\":\"https://www.booking.com/index.html?aid=1538006&label=en-sg-edge-ntp-topsites-curate-ana\",\"c.t\":31,\"c.hl\":\"More Options_Booking.com\"}","promote":false,"pinLabel":"Pin to page","pinActionButtonTelemetryTag":false},{"rid":1002,"faviconUrl":"//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAFaHwk.img","title":"Lazada","tileSource":-8,"url":"https://invol.co/clluiuq?aff_sub=en-sg_edge_topsites_curated&url=https%3A%2f%2fpages.lazada.sg%2fwow%2fgcp%2froute%2flazada%2fsg%2fupr_1000345_lazada%2fchannel%2fsg%2fupr-router%2fsg%2f","isSponsored":true,"contextMenuLabel":"More Options","contentViewTelemetryTag":"{\"n\":\"curatedleadgen_topsite_tile\",\"d\":\"https://invol.co/clluiuq?aff_sub=en-sg_edge_topsites_curated&url=https%3A%2f%2fpages.lazada.sg%2fwow%2fgcp%2froute%2flazada%2fsg%2fupr_1000345_lazada%2fchannel%2fsg%2fupr-router%2fsg%2f\",\"c.t\":31,\"ext\":{\"hl\":\"Lazada\",\"row\":1,\"col\":3},\"c.hl\":\"Lazada\"}","anchorTelemetryTag":"{\"n\":\"curatedleadgen_topsite_url\",\"b\":1,\"d\":\"https://invol.co/clluiuq?aff_sub=en-sg_edge_topsites_curated&url=https%3A%2f%2fpages.lazada.sg%2fwow%2fgcp%2froute%2flazada%2fsg%2fupr_1000345_lazada%2fchannel%2fsg%2fupr-router%2fsg%2f\",\"c.t\":31,\"c.hl\":\"Lazada\"}","toggleActionMenuButtonTelemetryTag":"{\"n\":\"curatedleadgen_topsite_context_menu\",\"b\":12,\"d\":\"https://invol.co/clluiuq?aff_sub=en-sg_edge_topsites_curated&url=https%3A%2f%2fpages.lazada.sg%2fwow%2fgcp%2froute%2flazada%2fsg%2fupr_1000345_lazada%2fchannel%2fsg%2fupr-router%2fsg%2f\",\"c.t\":31,\"c.hl\":\"More Options_Lazada\"}","promote":false,"pinLabel":"Pin to page","pinActionButtonTelemetryTag":false},{"rid":1003,"faviconUrl":"//img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1lxnZm.img","title":"Trip.com","tileSource":-8,"url":"https://invol.co/clljuxx?aff_sub=ensg_edge_topsites_curated&url=https%3A%2f%2fwww.trip.com%2findex%2f","isSponsored":true,"contextMenuLabel":"More Options","contentViewTelemetryTag":"{\"n\":\"curatedleadgen_topsite_tile\",\"d\":\"https://invol.co/clljuxx?aff_sub=ensg_edge_topsites_curated&url=https%3A%2f%2fwww.trip.com%2findex%2f\",\"c.t\":31,\"ext\":{\"hl\":\"Trip.com\",\"row\":1,\"col\":4},\"c.hl\":\"Trip.com\"}","anchorTelemetryTag":"{\"n\":\"curatedleadgen_topsite_url\",\"b\":1,\"d\":\"https://invol.co/clljuxx?aff_sub=ensg_edge_topsites_curated&url=https%3A%2f%2fwww.trip.com%2findex%2f\",\"c.t\":31,\"c.hl\":\"Trip.com\"}","toggleActionMenuButtonTelemetryTag":"{\"n\":\"curatedleadgen_topsite_context_menu\",\"b\":12,\"d\":\"https://invol.co/clljuxx?aff_sub=ensg_edge_topsites_curated&url=https%3A%2f%2fwww.trip.com%2findex%2f\",\"c.t\":31,\"c.hl\":\"More Options_Trip.com\"}","promote":false,"pinLabel":"Pin to page","pinActionButtonTelemetryTag":false},{"rid":1004,"faviconUrl":"//img-s-msn-com.akamaized.net/tenant/amp/entityid/BBXhrBy.img","title":"Shopee","tileSource":-8,"url":"https://invl.io/cllzfyv?aff_sub=ensg-edge-topsites-curated&url=https%3A%2f%2fshopee.sg%2funiversal-link%2f","isSponsored":true,"contextMenuLabel":"More Options","contentViewTelemetryTag":"{\"n\":\"curatedleadgen_topsite_tile\",\"d\":\"https://invl.io/cllzfyv?aff_sub=ensg-edge-topsites-curated&url=https%3A%2f%2fshopee.sg%2funiversal-link%2f\",\"c.t\":31,\"ext\":{\"hl\":\"Shopee\",\"row\":1,\"col\":5},\"c.hl\":\"Shopee\"}","anchorTelemetryTag":"{\"n\":\"curatedleadgen_topsite_url\",\"b\":1,\"d\":\"https://invl.io/cllzfyv?aff_sub=ensg-edge-topsites-curated&url=https%3A%2f%2fshopee.sg%2funiversal-link%2f\",\"c.t\":31,\"c.hl\":\"Shopee\"}","toggleActionMenuButtonTelemetryTag":"{\"n\":\"curatedleadgen_topsite_context_menu\",\"b\":12,\"d\":\"https://invl.io/cllzfyv?aff_sub=ensg-edge-topsites-curated&url=https%3A%2f%2fshopee.sg%2funiversal-link%2f\",\"c.t\":31,\"c.hl\":\"More Options_Shopee\"}","promote":false,"pinLabel":"Pin to page","pinActionButtonTelemetryTag":false},{"rid":1005,"faviconUrl":"//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAdUDuQ.img","title":"Linkedin","tileSource":-5,"url":"https://sg.linkedin.com/?utm_source=edge_ntp&utm_medium=top&utm_campaign=sg","contextMenuLabel":"More Options","contentViewTelemetryTag":"{\"n\":\"curated_topsite_tile\",\"d\":\"https://sg.linkedin.com/?utm_source=edge_ntp&utm_medium=top&utm_campaign=sg\",\"c.t\":31,\"ext\":{\"hl\":\"Linkedin\",\"row\":1,\"col\":6},\"c.hl\":\"Linkedin\"}","anchorTelemetryTag":"{\"n\":\"curated_topsite_url\",\"b\":1,\"d\":\"https://sg.linkedin.com/?utm_source=edge_ntp&utm_medium=top&utm_campaign=sg\",\"c.t\":31,\"c.hl\":\"Linkedin\"}","toggleActionMenuButtonTelemetryTag":"{\"n\":\"curated_topsite_context_menu\",\"b\":12,\"d\":\"https://sg.linkedin.com/?utm_source=edge_ntp&utm_medium=top&utm_campaign=sg\",\"c.t\":31,\"c.hl\":\"More Options_Linkedin\"}","promote":false,"pinLabel":"Pin to page","pinActionButtonTelemetryTag":false},{"rid":1006,"faviconUrl":"//img-s-msn-com.akamaized.net/tenant/amp/entityid/AAb0FKk.img","title":"Facebook","tileSource":-5,"url":"https://www.facebook.com/","contextMenuLabel":"More Options","contentViewTelemetryTag":"{\"n\":\"curated_topsite_tile\",\"d\":\"https://www.facebook.com/\",\"c.t\":31,\"ext\":{\"hl\":\"Facebook\",\"row\":1,\"col\":7},\"c.hl\":\"Facebook\"}","anchorTelemetryTag":"{\"n\":\"curated_topsite_url\",\"b\":1,\"d\":\"https://www.facebook.com/\",\"c.t\":31,\"c.hl\":\"Facebook\"}","toggleActionMenuButtonTelemetryTag":"{\"n\":\"curated_topsite_context_menu\",\"b\":12,\"d\":\"https://www.facebook.com/\",\"c.t\":31,\"c.hl\":\"More Options_Facebook\"}","promote":false,"pinLabel":"Pin to page","pinActionButtonTelemetryTag":false},{"rid":1007,"faviconUrl":"//img-s-msn-com.akamaized.net/tenant/amp/entityid/BBzt1Og.img","title":"Xbox","tileSource":-5,"url":"https://www.xbox.com/","contextMenuLabel":"More Options","contentViewTelemetryTag":"{\"n\":\"curated_topsite_tile\",\"d\":\"https://www.xbox.com/\",\"c.t\":31,\"ext\":{\"hl\":\"Xbox\",\"row\":1,\"col\":8},\"c.hl\":\"Xbox\"}","anchorTelemetryTag":"{\"n\":\"curated_topsite_url\",\"b\":1,\"d\":\"https://www.xbox.com/\",\"c.t\":31,\"c.hl\":\"Xbox\"}","toggleActionMenuButtonTelemetryTag":"{\"n\":\"curated_topsite_context_menu\",\"b\":12,\"d\":\"https://www.xbox.com/\",\"c.t\":31,\"c.hl\":\"More Options_Xbox\"}","promote":false,"pinLabel":"Pin to page","pinActionButtonTelemetryTag":false}]
+[{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"windows_win32"},{"application":"excel.activity.windows.com","platform":"host"},{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"packageId"},{"application":"","platform":"alternateId"}]06wuk4HwX9PxBRPNsITJWeMTI7aImrc9e74/hnQuU48=ECB32AF3-1440-4086-94E3-5311F97F89C4\{Local Downloads}\capbudg.xlsm
+[{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"windows_win32"},{"application":"excel.activity.windows.com","platform":"host"},{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"packageId"},{"application":"","platform":"alternateId"}]06wuk4HwX9PxBRPNsITJWeMTI7aImrc9e74/hnQuU48=ECB32AF3-1440-4086-94E3-5311F97F89C4\{Local Downloads}\capbudg.xlsm
+[{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"windows_win32"},{"application":"excel.activity.windows.com","platform":"host"},{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"packageId"},{"application":"","platform":"alternateId"}]06wuk4HwX9PxBRPNsITJWeMTI7aImrc9e74/hnQuU48=ECB32AF3-1440-4086-94E3-5311F97F89C4\{Local Downloads}\capbudg.xlsm
+[{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"windows_win32"},{"application":"excel.activity.windows.com","platform":"host"},{"application":"Microsoft.Office.EXCEL.EXE.15","platform":"packageId"},{"application":"","platform":"alternateId"}]06wuk4HwX9PxBRPNsITJWeMTI7aImrc9e74/hnQuU48=ECB32AF3-1440-4086-94E3-5311F97F89C4\{Local Downloads}\capbudg.xlsm
+com","nuance.com","mcgraw-hill.com","unitedrentals.com","ramseysolutions.com","vwr.com","publicstorage.com","learninghouse.com","krispykreme.com","benefithub.com","mypepsico.com","us02web.zoom.us","zoom.us","login.microsoftonline.com","vrbo.com","pornhub.com","accounts.google.com","canva.com","xnxx.com","airbnb.com","web.roblox.com","microsoft.com","teams.microsoft.com","app.qbo.intuit.com","expedia.com","xvideos.com","realtor.com","sellercentral.amazon.com","us.shein.com","xhamster.com","pinterest.com","nordstrom.com","outlook.office.com","support.microsoft.com","bing.com","pandora.com","outlook.office365.com","drive.google.com","roblox.com","my.xfinity.com","google.com","chase.com","indeed.com","etsy.com","zillow.com","instacart.com","target.com","dailymail.co.uk","games.aarp.org","verizon.com","att.com","ikea.com","dataexplorer.azure.com","dev.azure.com"],"version":"1.0.0","hoursToExpire":240}
+ntp.msn.comth.bing.com"Yf
+ntp.msn.com"
+ntp.msn.com'1
+ntp.msn.coms
+ntp.msn.com'1
+ntp.msn.com"
+ntp.msn.com"Yf
+ntp.msn.coms
+ntp.msn.com"Yf
+ntp.msn.coms
+sync.inmobi.comsync.inmobi.com
+sb.scorecardresearch.comsb.scorecardresearch.com
+sync.inmobi.comsync.inmobi.com
+sb.scorecardresearch.comsb.scorecardresearch.com
+FINDSTR: Line 5934569 is too long.
+FINDSTR: Line 5934569 is too long.
+FINDSTR: Line 5934569 is too long.
+FINDSTR: Line 5934569 is too long.
+FINDSTR: Line 5934569 is too long.
+FINDSTR: Line 5934569 is too long.
+FINDSTR: Line 5934659 is too long.
+FINDSTR: Line 5934659 is too long.
+FINDSTR: Line 5934659 is too long.
+FINDSTR: Line 5934659 is too long.
+FINDSTR: Line 5934659 is too long.
+FINDSTR: Line 5934659 is too long.
