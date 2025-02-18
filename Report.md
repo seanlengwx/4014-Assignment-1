@@ -60,3 +60,18 @@ Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B9
 ```
 - `svchost.exe` normally communicates with Microsoft services, but its parent should be `services.exe`
 - IP `20.198.162.76` is a Microsoft IP, but some malware hides within legitimate traffic.
+
+## Exploring `EXCEL.EXE` (PID 8040)
+### CMDLINE 
+- From looking at commands executed we see that it downloaded a file called `capbudg.xlsm`
+```
+8040    EXCEL.EXE       "C:\Program Files (x86)\Microsoft Office\Root\Office16\EXCEL.EXE" "C:\Users\User\Downloads\capbudg.xlsm"
+```
+- Looking at the [filescan](./Output Files/filescan_output.txt) we see that `capbudg.xlsm` has a virtual address of `0x850bb4652940`.
+```
+0x850bb4652940	\Users\User\Downloads\capbudg.xlsm
+```
+- Using the virtual address, we dump the files and obtain 2 files
+  1. `file.0x850bb4652940.0x850bb3c0b010.SharedCacheMap.capbudg.xlsm.vacb`
+  2. `file.0x850bb4652940.0x850bb45c4370.DataSectionObject.capbudg.xlsm.dat`
+- Since it is a xlsm file, it could potentially have macros. Checking for that, 
