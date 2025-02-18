@@ -67,7 +67,7 @@ Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B9
 ```
 8040    EXCEL.EXE       "C:\Program Files (x86)\Microsoft Office\Root\Office16\EXCEL.EXE" "C:\Users\User\Downloads\capbudg.xlsm"
 ```
-- Looking at the [filescan](./Output Files/filescan_output.txt) we see that `capbudg.xlsm` has a virtual address of `0x850bb4652940`.
+- Looking at the [filescan](Output Files/filescan_output.txt) we see that `capbudg.xlsm` has a virtual address of `0x850bb4652940`.
 ```
 0x850bb4652940	\Users\User\Downloads\capbudg.xlsm
 ```
