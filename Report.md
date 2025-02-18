@@ -14,6 +14,7 @@
 
 ## Parent and Child Processes
 - Looking at the [pstree](<./Output Files/pstree_output.txt>) we see that the suspicious sample is spawned by a few processes:
+- Command used: ```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.pstree > pstree_output.txt```
 ```
 764	700	winlogon.exe	0x850bb1bf0180
 * 4344	764	userinit.exe	0x850bb31f0340
@@ -124,6 +125,7 @@ Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B9
 
 ## Exploring `calc.exe` (PID 1132)
 - Looking at the [cmdline output](<./Output Files/cmdline_output.txt>) we see nothing suspicious
+- Command used: ``` ```
 ```
 1132	calc.exe	"C:\Windows\calc.exe" 
 3276	calc.exe	"C:\Windows\calc.exe" 
@@ -131,6 +133,7 @@ Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B9
 - Looking at the memory dump of (PID 1132), we see that it contains Python-related files (`python39.dll`, `_hashlib.pyd`, `_socket.pyd`,etc.).
 - This suggests the execution of Python scripts within `calc.exe`
 - This is a known persistence technique where malware uses `calc.exe` to execute hidden payloads.
+- Command used: ```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.dumpfiles.DumpFiles --pid 1132```
 ```
 ImageSectionObject      0x850baef94ed0  KernelBase.dll  file.0x850baef94ed0.0x850baef9cc00.ImageSectionObject.KernelBase.dll.img
 ImageSectionObject      0x850bb3a50420  python39.dll    file.0x850bb3a50420.0x850bb48b9d60.ImageSectionObject.python39.dll.img
@@ -183,6 +186,7 @@ ImageSectionObject      0x850baecf0070  ntdll.dll       file.0x850baecf0070.0x85
 
 - However, searching the SHA256 hash of `calc.exe image` does not return any result on **VirusTotal**.
 - Looking at the [NetScan](<./Output Files/netscan_output.txt>) we see that `calc.exe` (PID 3276) actually connects to an external IP address `192.168.170.132	65432`. This could mean that `calc.exe (PID 1132)` is used to execute the malicious code and establishes connection with a C2 server for data exfiltration or downloading of payloads.
+- Command used: ```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.netscan | findstr "calc.exe" ``` 
 ```
 0x850bb3b32b50	TCPv4	192.168.221.131	49753	192.168.170.132	65432	ESTABLISHED	1132	calc.exe	2025-01-27 09:07:48.000000 UTC
 ```
@@ -199,10 +203,12 @@ ImageSectionObject      0x850baecf0070  ntdll.dll       file.0x850baecf0070.0x85
   9. `0x850bb4d26a40	\Users\User\AppData\Local\Temp\_MEI32762\_hashlib.pyd`
   10. `0x850bb4d26bd0	\Users\User\AppData\Local\Temp\_MEI32762\charset_normalizer\md.cp39-win_amd64.pyd`
   11. `0x850bb4d26d60	\Users\User\AppData\Local\Temp\_MEI32762\unicodedata.pyd`
-
-- Knowing that `calc.exe` is connecting to an external IP address, and using python libraries to execute some malicious code, we get a `.dmp` of it.
+- Command used: ```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.filescan | findstr "pyd"```
+- Knowing that `calc.exe` is connecting to an external IP address, and using python libraries to execute some malicious code, we get a `.dmp` of it using the command: ```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.memmap --pid 1132 --dump```
 - Since we see that the child processes of the malicious sample `scvhost.exe` spawns multiple `msedge.exe`, we search for any suspicious looking URLs.
+- Command used: ```strings "C:\Windows\System32\volatility3\pid.1132.dmp" | findstr /R "\.com[\"'\s]"```
 - From the [output](<./Output Files/calc_exe_mem_output.txt>) we find the flag: `faken3t_t1ll_u_mak3_1t.com`
+
 ## Exploring `notepad.exe` (PID 10200)
 - Looking at the [cmdline output](<./Output Files/cmdline_output.txt>) we see that the file `flag.txt` was created
 ```
