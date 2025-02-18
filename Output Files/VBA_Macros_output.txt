@@ -1,0 +1,219 @@
+olevba 0.60.1 on Python 3.10.11 - http://decalage.info/python/oletools
+===============================================================================
+FILE: file.0x850bb4652940.0x850bb45c4370.DataSectionObject.capbudg.xlsm.dat
+Type: OpenXML
+XLMMacroDeobfuscator: pywin32 is not installed (only is required if you want to use MS Excel)
+WARNING  For now, VBA stomping cannot be detected for files in memory
+-------------------------------------------------------------------------------
+VBA MACRO ThisWorkbook.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/ThisWorkbook'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Private Sub Workbook_Open()
+    ShowEncryptedFlagFromCells
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO Sheet1.cls 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Sheet1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Module1.bas 
+in file: xl/vbaProject.bin - OLE stream: 'VBA/Module1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Option Explicit
+
+Public Sub ShowEncryptedFlagFromCells()
+    Dim hHjk7 As String, j3K As String
+    Dim lLm As String, L9z As String
+    Dim pQy As String
+    Dim c25 As String
+    Dim gW8 As String
+    Dim a5B As String
+    
+    ' 1) Read the four cells E14, F14, G14, H14
+    hHjk7 = Range("E14").Value
+    j3K = Range("F14").Value
+    lLm = Range("G14").Value
+    L9z = Range("H14").Value
+    
+    ' 2) Combine them into one string
+    pQy = hHjk7 & j3K & lLm & L9z
+    
+    ' 3) XOR with the key
+    c25 = "S3cR3tK3y"
+    gW8 = wZ11(pQy, c25)
+    
+    ' 4) Base64 encode the XORed string
+    a5B = b8Q(gW8)
+    
+    ' 5) Attempt to ping a domain multiple times before showing the message
+    '
+    '    Parameters to adjust:
+    '       - "www.example.com" : the domain or IP to be pinged
+    '       - 5 (maxAttempts)   : how many times to try pinging
+    '       - 3 (waitSeconds)   : how many seconds to wait between attempts
+    '
+    If RepeatedPing("www.google.com", 5, 3) Then
+        MsgBox "Encrypted Flag: " & a5B, vbInformation, "CTF Challenge"
+    Else
+        MsgBox "Failed to get a ping response after multiple attempts.", vbExclamation, "CTF Challenge"
+    End If
+End Sub
+
+' ===================================================
+' ===============  XOR Function  ====================
+' ===================================================
+Private Function wZ11(ByVal xX1 As String, ByVal xX2 As String) As String
+    Dim i1 As Long, i2 As Long
+    Dim sS As String
+    
+    i2 = 1
+    For i1 = 1 To Len(xX1)
+        sS = sS & Chr(Asc(Mid(xX1, i1, 1)) Xor Asc(Mid(xX2, i2, 1)))
+        i2 = i2 + 1
+        If i2 > Len(xX2) Then i2 = 1
+    Next i1
+    
+    wZ11 = sS
+End Function
+
+' ===================================================
+' ============  Base64 Encode Functions  ============
+' ===================================================
+Private Function b8Q(ByVal rT7 As String) As String
+    Dim bB() As Byte
+    Dim oO As String
+    Dim vV As Long
+    Dim tT As Long
+    Dim zZ As Long
+    
+    bB = StrConv(rT7, vbFromUnicode)
+    vV = LBound(bB)
+    
+    Do While vV <= UBound(bB)
+        tT = bB(vV) * &H10000
+        vV = vV + 1
+        
+        If vV <= UBound(bB) Then
+            tT = tT + bB(vV) * &H100
+            vV = vV + 1
+            If vV <= UBound(bB) Then
+                tT = tT + bB(vV)
+                vV = vV + 1
+            Else
+                zZ = 1
+            End If
+        Else
+            zZ = 2
+        End If
+        
+        oO = oO & b8C((tT And &HFC0000) \ &H40000)
+        oO = oO & b8C((tT And &H3F000) \ &H1000)
+        
+        If zZ < 2 Then
+            oO = oO & b8C((tT And &HFC0) \ &H40)
+        Else
+            oO = oO & "="
+        End If
+        
+        If zZ < 1 Then
+            oO = oO & b8C(tT And &H3F)
+        Else
+            oO = oO & "="
+        End If
+    Loop
+    
+    b8Q = oO
+End Function
+
+Private Function b8C(ByVal kK As Long) As String
+    Const aA As String = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+    If kK >= 0 And kK <= 63 Then
+        b8C = Mid(aA, kK + 1, 1)
+    Else
+        b8C = "="
+    End If
+End Function
+
+' ===================================================
+' ===============  Ping Functions  ==================
+' ===================================================
+
+' PingOnce: pings the given domain/IP one time (-n 1).
+'           Returns True if success, False if failed.
+Private Function PingOnce(ByVal hostName As String) As Boolean
+    Dim wsh As Object
+    Dim ret As Long
+    
+    On Error GoTo ErrHandler
+    
+    ' Use WScript.Shell to run the ping command
+    Set wsh = CreateObject("WScript.Shell")
+    
+    ' Run the command: ping -n 1 [hostName]
+    '    /c        => carry out the command
+    '    -n 1      => send exactly 1 ping request
+    '    >nul      => discard output (optional, to avoid console flash)
+    '
+    ' The third parameter (True) waits for completion,
+    ' letting us read the return code in ret.
+    ret = wsh.Run("cmd /c ping -n 1 " & hostName & " > nul", 0, True)
+    
+    ' Typically, ping returns 0 if at least one reply is received;
+    ' otherwise returns 1 (no replies).
+    PingOnce = (ret = 0)
+    
+Exit Function
+ErrHandler:
+    ' If an error happens, consider it a failed ping
+    PingOnce = False
+End Function
+
+' RepeatedPing: tries PingOnce multiple times (maxAttempts),
+'               waiting waitSeconds between each attempt.
+'               Returns True if success on any attempt,
+'               otherwise False if all fail.
+Private Function RepeatedPing(ByVal hostName As String, ByVal maxAttempts As Long, _
+                              ByVal waitSeconds As Long) As Boolean
+    Dim i As Long
+    
+    For i = 1 To maxAttempts
+        If PingOnce(hostName) Then
+            RepeatedPing = True
+            Exit Function
+        Else
+            ' Wait 'waitSeconds' between attempts
+            Application.Wait (Now + TimeValue("0:00:" & waitSeconds))
+        End If
+    Next i
+    
+    ' If it reaches here, all attempts failed
+    RepeatedPing = False
+End Function
+
+
+
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |Workbook_Open       |Runs when the Excel Workbook is opened       |
+|Suspicious|output              |May write to a file (if combined with Open)  |
+|Suspicious|Shell               |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|WScript.Shell       |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|run                 |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|command             |May run PowerShell commands                  |
+|Suspicious|CreateObject        |May create an OLE object                     |
+|Suspicious|Chr                 |May attempt to obfuscate specific strings    |
+|          |                    |(use option --deobf to deobfuscate)          |
+|Suspicious|XOR                 |May attempt to obfuscate specific strings    |
+|          |                    |(use option --deobf to deobfuscate)          |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
++----------+--------------------+---------------------------------------------+
