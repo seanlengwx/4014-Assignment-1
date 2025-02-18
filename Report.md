@@ -2,7 +2,7 @@
 ## OS Profile and Kernel Version:
 - Kernel Base: 0xf80651600000
 - OS: WindowsIntel32
-- more details in: [info output](Output-Files/info_output.txt)
+- more details in: [info output](4014-Assignment-1/Output Files/info_output.txt)
 
 ## Name of Suspicious Sample:
 **scvhost.exe** (PID: 9160)
@@ -62,7 +62,6 @@ Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B9
 - IP `20.198.162.76` is a Microsoft IP, but some malware hides within legitimate traffic.
 
 ## Exploring `EXCEL.EXE` (PID 8040)
-### CMDLINE 
 - From looking at commands executed we see that it downloaded a file called `capbudg.xlsm`
 ```
 8040    EXCEL.EXE       "C:\Program Files (x86)\Microsoft Office\Root\Office16\EXCEL.EXE" "C:\Users\User\Downloads\capbudg.xlsm"
@@ -76,3 +75,27 @@ Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B9
   2. `file.0x850bb4652940.0x850bb45c4370.DataSectionObject.capbudg.xlsm.dat`
 - Since it is a xlsm file, it could potentially have macros. Checking for that, we see VBA commands that utilize cells in the excel. Exploring the excel workbook, we navigate to the cells mentioned in the VBA command: `E14`, `F14`, `G14`, `H14`
 - Here we find: `flag(memory_corruption_is_bad)`
+
+## Exploring `calc.exe` (PID 1132)
+- Looking at the [cmdline output](/Output Files/cmdline_output.txt) we see nothing suspicious
+```
+1132	calc.exe	"C:\Windows\calc.exe" 
+3276	calc.exe	"C:\Windows\calc.exe" 
+```
+
+## Exploring `notepad.exe` (PID 10200)
+- Looking at the [cmdline output](/Output Files/cmdline_output.txt) we see that the file `flag.txt` was created
+```
+10200	notepad.exe	"C:\Windows\system32\NOTEPAD.EXE" C:\Users\User\Desktop\flag.txt
+```
+- Exploring the [filescan](Output Files/filescan_output.txt) we see that the file `flag.txt.lnk` has the virtual address: `0x850bb4aa4190`
+```
+0x850bb4aa4190	\Users\User\AppData\Roaming\Microsoft\Windows\Recent\flag.txt.lnk
+```
+- Dumping the virtual address, we find the file `file.0x850bb4aa4190.0x850bb665e5d0.DataSectionObject.flag.txt.lnk.dat`
+```
+DataSectionObject       0x850bb4aa4190  flag.txt.lnk    file.0x850bb4aa4190.0x850bb665e5d0.DataSectionObject.flag.txt.lnk.dat
+```
+- However, renaming the extension reveals a bunch of scrambled unreadable text.
+- Taking another approach, we **memdump** the PID 10200
+- 
