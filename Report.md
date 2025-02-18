@@ -110,3 +110,25 @@ flag{d0nt_foRg3t_uN1c0de_$t
 flag{d0nt_foRg3t_uN1c0de
 ```
 - so we see that the 2nd flag is: `flag{d0nt_foRg3t_uN1c0de_$tR1nGs}`
+
+## Exploring `scvhost.exe` (PID 9160)
+- Dumpfiles gave us an error for dumping **DataSectionObject** but a successful dump for **ImageSectionObject** suggesting self-protection techniques
+```
+DataSectionObject       0x850bb6239960  scvhost.exe     Error dumping file
+ImageSectionObject      0x850bb6239960  scvhost.exe   file.0x850bb6239960.0x850bb33757d0.ImageSectionObject.scvhost.exe.img
+```
+
+- The presence of `wow64cpu.dll`, `wow64.dll`, and `wow64win.dll` indicates 32-bit exewcution on a 64-bit system, which malware sometimes do to bypass security mechanisms.
+- It is possible that `scvhost.exe` may be injecting itself into 64-bit processes
+```
+ImageSectionObject      0x850baef93830  wow64cpu.dll
+ImageSectionObject      0x850baef92570  wow64.dll
+ImageSectionObject      0x850bae4836a0  wow64win.dll
+```
+- Dependencies on `ntdll.dll` and `KernelBase.dll` which are used for process creation, memory manipulation, and API hooking strongly suggest that `scvhost.exe` is a malware which use API function hooks to evade detection.
+```
+ImageSectionObject      0x850baecf0070  ntdll.dll
+ImageSectionObject      0x850baefe0d40  kernel32.dll
+ImageSectionObject      0x850baee621f0  KernelBase.dll
+```
+
