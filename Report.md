@@ -266,3 +266,27 @@ ImageSectionObject      0x850baefe0d40  kernel32.dll
 ImageSectionObject      0x850baee621f0  KernelBase.dll
 ```
 
+## Exploring `svchost.exe` (PID 3644)
+- Normally `svchost.exe` will have the following properties:
+  1. Runs from `C:\Windows\System32\svchost.exe`
+  2. Has a valid service name (-s ServiceName)
+  3. Parent process is services.exe (PID 828)
+  4. Uses known service groups (-k LocalService, -k netsvcs, etc.)
+  5. Has a reasonable number of threads & handles
+ 
+- Based on the above, `svchost.exe` **(PID 3644)** is suspicious because:
+  1. No -k parameter, meaning it's not grouped with a valid Windows service.
+  2. No -s parameter, meaning it's not hosting a known service.
+  3. Parent process is SearchFilterHost.exe (PID 3452), which is not a typical parent for svchost.exe.
+  4. Unusually low thread count (1) — normal svchost.exe processes have multiple threads.
+
+- 🖥️Command: ```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.cmdline | findstr "3644""```
+- We see that `svchost.exe` is executing from `C:\Windows\svchost.exe` instead of the normal `C:\Windows\System32\svchost.exe`
+- Implying that it is a fake `svchost.exe`
+```
+3644    svchost.exe     C:\Windows\svchost.exeinished
+```
+
+- 🖥️Command: ```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.pslist --pid 3644 --dump ```
+- 🖥️Command: ```strings "C:\Windows\System32\volatility3\pid.3644.dmp" | findstr /i "flag  fla9  fl@g  fl@9  fl4g  fl49  f1ag  f1a9  f1@g  f1@9  f14g  f149  phlag  phla9  phl@g  phl@9  phl4g  phl49  ph1ag  ph1a9  ph1@g  ph1@9  ph14g  ph149 "```
+- 🚩Analysing strings in the `.dmp` file, we find the flag: flag{5vch0st_1s_l3g1t1m4t3}
