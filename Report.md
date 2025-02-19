@@ -287,6 +287,16 @@ ImageSectionObject      0x850baee621f0  KernelBase.dll
 3644    svchost.exe     C:\Windows\svchost.exeinished
 ```
 
+- 🖥️Command:```Get-FileHash -Algorithm SHA256 -Path "C:\Windows\System32\volatility3\3644.svchost.exe.0x7ff683e00000.dmp"```
+- Checking the **SHA256** hash, we see that it unlocks the `binary(1).7z` file.
+```
+Algorithm       Hash                                                                   Path
+---------       ----                                                                   ----
+SHA256          C42B19A7D5403FF9E8AC98E75F6A0B8BCCD11CA9B4D227042C03442EA3CA0099       C:\Windows\System32\volatilit...
+```
+🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨
+                  This flag is not done properly. Please perform dynamic analysis to get credits.
+🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨
 - 🖥️Command: ```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.pslist --pid 3644 --dump ```
 - 🖥️Command: ```strings "C:\Windows\System32\volatility3\pid.3644.dmp" | findstr /i "flag  fla9  fl@g  fl@9  fl4g  fl49  f1ag  f1a9  f1@g  f1@9  f14g  f149  phlag  phla9  phl@g  phl@9  phl4g  phl49  ph1ag  ph1a9  ph1@g  ph1@9  ph14g  ph149 "```
 - 🚩Analysing strings in the `.dmp` file, we find the flag: flag{5vch0st_1s_l3g1t1m4t3}
