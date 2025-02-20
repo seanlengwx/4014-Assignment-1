@@ -294,9 +294,33 @@ Algorithm       Hash                                                            
 ---------       ----                                                                   ----
 SHA256          C42B19A7D5403FF9E8AC98E75F6A0B8BCCD11CA9B4D227042C03442EA3CA0099       C:\Windows\System32\volatilit...
 ```
-🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨
-                  This flag is not done properly. Please perform dynamic analysis to get credits.
-🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨🚨
-- 🖥️Command: ```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.pslist --pid 3644 --dump ```
-- 🖥️Command: ```strings "C:\Windows\System32\volatility3\pid.3644.dmp" | findstr /i "flag  fla9  fl@g  fl@9  fl4g  fl49  f1ag  f1a9  f1@g  f1@9  f14g  f149  phlag  phla9  phl@g  phl@9  phl4g  phl49  ph1ag  ph1a9  ph1@g  ph1@9  ph14g  ph149 "```
-- 🚩Analysing strings in the `.dmp` file, we find the flag: flag{5vch0st_1s_l3g1t1m4t3}
+
+## Dynamic Analysis on Malware Sample `svchost.exe`
+### Tools utilised
+- RegShot
+- Procmon
+- VMWare Workstation 17 Pro
+
+### Regshot Analysis
+- Regshot was used to compare the registry keys before and after Malware execution
+
+#### Persistency & Flag
+- From the output, we discovered a specific change in the `Run` registry key which is a common technique malwares employ for persistency.
+```HKU\S-1-5-21-1596178189-2907628744-1231099037-1001\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\flag{5vch0st_1s_l3g1t1m4t3}```
+- 🚩 Flag found: `flag{5vch0st_1s_l3g1t1m4t3}`
+
+#### Possible bypassing of Windows Security
+- There was a modification of the `AppCompatFlag`, impyling that the malware was interacting with Windows Compatibility Settings, possibly to prevent **User Access Control (UAC)** prompts.
+```
+HKU\S-1-5-21-1596178189-2907628744-1231099037-1001\
+SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Compatibility Assistant\Store\
+C:\Users\Malware_Analyst\Desktop\binary(1)\svchost.exe
+```
+
+#### Possible Privilege Escalation using `conhost.exe`
+- The malware interacted with conhost.exe (Console Window Host), often used for privilege escalation:
+```
+HKLM\SYSTEM\ControlSet001\Services\bam\State\UserSettings\
+S-1-5-21-1596178189-2907628744-1231099037-1001\\Device\HarddiskVolume3\Windows\System32\conhost.exe
+```
+- `conhost.exe` can be used to execute commands in a high-privilege context (e.g., injecting processes, running PowerShell scripts).
