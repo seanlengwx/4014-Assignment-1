@@ -1,4 +1,11 @@
 # Memory Forensics Report
+## Flags found:
+- 🚩`flag(memory_corruption_is_bad)`
+- 🚩`faken3t_t1ll_u_mak3_1t.com`
+- 🚩`fl4g{fl0ss_d41ly_str1ngs_d41ly}`
+- 🚩`flag{d0nt_foRg3t_uN1c0de_$tR1nGs}`
+- 🚩`flag{5vch0st_1s_l3g1t1m4t3}`
+
 ## OS Profile and Kernel Version:
 - 🖥️Command: ``` vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.info > info_output.txt ```
 - Kernel Base: 0xf80651600000
@@ -259,12 +266,31 @@ ImageSectionObject      0x850baef93830  wow64cpu.dll
 ImageSectionObject      0x850baef92570  wow64.dll
 ImageSectionObject      0x850bae4836a0  wow64win.dll
 ```
+
 - Dependencies on `ntdll.dll` and `KernelBase.dll` which are used for process creation, memory manipulation, and API hooking strongly suggest that `scvhost.exe` is a malware which use API function hooks to evade detection.
 ```
 ImageSectionObject      0x850baecf0070  ntdll.dll
 ImageSectionObject      0x850baefe0d40  kernel32.dll
 ImageSectionObject      0x850baee621f0  KernelBase.dll
 ```
+
+- 🖥️Command:```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.pslist --pid 9160 --dump```
+- Looking at the strings inside of the `.dmp` file of `scvhost.exe` we see a suspicious chunk of strings:
+```
+000127E4  DecodePointer
+00013000  Zmw0Z3tmbDBzc19kNDFseV9zdHIxbmdzX2Q0MWx5fQoKCgoKCgo=
+0001310A                            
+000131EA  abcdefghijklmnopqrstuvwxyz
+0001320A  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+00013312                            
+00013390                          
+000133A9          
+000133F9  abcdefghijklmnopqrstuvwxyz
+00013419  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+00013CD0  C:\Windows\System32\scvhost.exe
+```
+- 🚩Decoding the base-64 encoded string, we get the flag: `fl4g{fl0ss_d41ly_str1ngs_d41ly}`
+
 
 ## Exploring `svchost.exe` (PID 3644)
 - Normally `svchost.exe` will have the following properties:
