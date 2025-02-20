@@ -1,10 +1,10 @@
 # Memory Forensics Report
 ## Flags found:
-- 🚩`flag(memory_corruption_is_bad)`
-- 🚩`faken3t_t1ll_u_mak3_1t.com`
-- 🚩`fl4g{fl0ss_d41ly_str1ngs_d41ly}`
-- 🚩`flag{d0nt_foRg3t_uN1c0de_$tR1nGs}`
-- 🚩`flag{5vch0st_1s_l3g1t1m4t3}`
+- 🚩`flag(memory_corruption_is_bad)`[jump](##exploring-excelexe-pid-8040)
+- 🚩`faken3t_t1ll_u_mak3_1t.com`[jump](#exploring-calcexe-pid-1132)
+- 🚩`fl4g{fl0ss_d41ly_str1ngs_d41ly}`[jump](#exploring-scvhostexe-pid-9160)
+- 🚩`flag{d0nt_foRg3t_uN1c0de_$tR1nGs}`[jump](#exploring-notepadexe-pid-10200)
+- 🚩`flag{5vch0st_1s_l3g1t1m4t3}` [jump](#exploring-svchostexe-pid-3644)
 
 ## OS Profile and Kernel Version:
 - 🖥️Command: ``` vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.info > info_output.txt ```
