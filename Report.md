@@ -68,7 +68,7 @@
 - Obtained SHA-256 Hash: `43810BE66E6F500B4ABC4812FD49EE4C778F379F1712B98D722905B98A0EDB97`
 - **VirusTotal**: 4/72 security vendors flagged as malicious.
 
-## NetScan [output](<./Output Files/netscan_output.txt>)
+## Unusual External Connections from [NetScan](<./Output Files/netscan_output.txt>)
 ### 1. `EXCEL.EXE` Making External Connections (PID 8040)
 ```
 0x850bb3566a20	TCPv4	192.168.221.131	49734	23.217.112.41	443	ESTABLISHED	8040	EXCEL.EXE	2025-01-27 09:08:18.000000 UTC
