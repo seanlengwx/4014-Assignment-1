@@ -213,10 +213,10 @@ ImageSectionObject      0x850baecf0070  ntdll.dll       file.0x850baecf0070.0x85
   10. `0x850bb4d26bd0	\Users\User\AppData\Local\Temp\_MEI32762\charset_normalizer\md.cp39-win_amd64.pyd`
   11. `0x850bb4d26d60	\Users\User\AppData\Local\Temp\_MEI32762\unicodedata.pyd`
 
-- Knowing that `calc.exe` is connecting to an external IP address, and using python libraries to execute some malicious code, we get a `.dmp` of it using the command: ```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.memmap --pid 1132 --dump```
-- Since we see that the child processes of the malicious sample `scvhost.exe` spawns multiple `msedge.exe`, we search for any suspicious looking URLs.
-- 🖥️Command: ```strings "C:\Windows\System32\volatility3\pid.1132.dmp" | findstr /R "\.com[\"'\s]"```
-- 🚩From the [output](<./Output Files/calc_exe_mem_output.txt>) we find the flag: `faken3t_t1ll_u_mak3_1t.com`
+- Knowing that `calc.exe` is connecting to an external IP address, and using python libraries to execute some malicious code, we attempt to get the `.exe` file using the command: ```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.dumpfiles.DumpFiles --virtaddr 0x850bb4aa7520```
+- Now we use **FakeNet** to observe the WireShark output when calc.exe is executed.
+- Executing calc.exe, we obtain this [output](<./Output_Files/Wireshark_Output for Calc.exe>)
+- 🚩From there we find the flag: `faken3t_t1ll_u_mak3_1t.com`
 
 ## Exploring `notepad.exe` (PID 10200)
 - 🖥️Command: ```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.cmdline```
