@@ -215,7 +215,7 @@ ImageSectionObject      0x850baecf0070  ntdll.dll       file.0x850baecf0070.0x85
 
 - Knowing that `calc.exe` is connecting to an external IP address, and using python libraries to execute some malicious code, we attempt to get the `.exe` file using the command: ```vol.py -f "C:\Users\Malware_Analyst\Desktop\memory.dmp" windows.dumpfiles.DumpFiles --virtaddr 0x850bb4aa7520```
 - Now we use **FakeNet** to observe the WireShark output when calc.exe is executed.
-- Executing calc.exe, we obtain this [output](<./Output_Files/Wireshark_Output for Calc.exe>)
+- Executing calc.exe, we obtain this [output](<./Output_Files/Wireshark_Output for Calc_exe>)
 - 🚩From there we find the flag: `faken3t_t1ll_u_mak3_1t.com`
 
 ## Exploring `notepad.exe` (PID 10200)
