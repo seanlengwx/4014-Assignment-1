@@ -75,7 +75,7 @@
 0x850bb3b22b50	TCPv4	192.168.221.131	49732	23.217.112.41	443	ESTABLISHED	8040	EXCEL.EXE	2025-01-27 09:08:18.000000 UTC
 0x850bb3dac010	TCPv4	192.168.221.131	49733	23.217.112.41	443	ESTABLISHED	8040	EXCEL.EXE	2025-01-27 09:08:18.000000 UTC
 ```
-- Microsoft Excel should not normally establish network connections.
+- Microsoft Excel should not normally establish network connections over port 443.
 - The remote IP `23.217.112.41` belongs to **Akamai** which hosts legitimate services but is also know to be used for malware delivery.
 - Possibly indiciate macro-based malware, DDE injection, or weaponized Excel documents communicating with an external server.
 
